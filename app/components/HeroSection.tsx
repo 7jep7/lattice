@@ -1,15 +1,14 @@
 // app/components/HeroSection.tsx
+import LatticeBackground from './LatticeBackground';
+
 export default function HeroSection() {
     return (
-      <section className="min-h-screen bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
-        <nav className="absolute top-6 left-0 right-0 flex justify-center gap-8 text-sm font-medium text-accent dark:text-accent-dark">
-          <a href="#readme" className="hover:text-primary">README</a>
-          <a href="#vision" className="hover:text-primary">Vision</a>
-          <a href="#how-it-works" className="hover:text-primary">How It Works</a>
-          <a href="#for-builders" className="hover:text-primary">For Builders</a>
-          <a href="#contact" className="hover:text-primary">Contact</a>
-        </nav>
+      <section className="relative overflow-hidden min-h-screen bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
+        
+        {/* 🔹 Add animated background */}
+        <LatticeBackground />
   
+        {/* 🔹 Main hero content */}
         <div className="max-w-4xl mt-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             An open layer for coordination between intelligent machines
