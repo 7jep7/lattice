@@ -1,5 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
 import HeroSection from "~/components/HeroSection";
+import ReadmeSection from "~/components/ReadmeSection";
 
 export const meta: MetaFunction = () => {
   return [
@@ -13,6 +14,7 @@ export default function Index() {
   return (
     <main>
       <HeroSection />
+      <ReadmeSection />
       {/* You can add other components like <ReadmeSection /> or <VisionSection /> here later */}
     </main>
   );
