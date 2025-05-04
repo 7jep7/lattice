@@ -4,9 +4,18 @@
 
 html,
 body {
-  @apply bg-white dark:bg-gray-950;
+  @apply bg-background text-text dark:bg-background-dark dark:text-text-dark;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
   }
+}
+
+/* Buttons */
+.btn {
+  @apply border border-accent dark:border-accent-dark rounded-full px-5 py-2 text-sm font-medium hover:bg-primary hover:text-white transition;
+}
+
+.btn-primary {
+  @apply bg-primary text-white rounded-full px-5 py-2 text-sm font-medium hover:brightness-110 transition;
 }
