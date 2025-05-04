@@ -6,7 +6,7 @@ export default function HeroSection() {
       <section className="relative overflow-hidden min-h-screen bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
         
         {/* 🔹 Add animated background */}
-        <LatticeBackground />
+        {/* <LatticeBackground /> */}
   
         {/* 🔹 Main hero content */}
         <div className="max-w-4xl mt-16">

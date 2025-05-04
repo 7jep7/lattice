@@ -75,7 +75,7 @@ export default function ReadmeSection() {
 
   return (
     <section id="readme" className="w-full flex min-h-screen">
-      {/* Left: Fixed Glowing circle */}
+      {/* Left: Fixed Glowing circle
       <div className="hidden md:block w-1/2 min-h-screen relative">
         <div
           style={{
@@ -93,7 +93,7 @@ export default function ReadmeSection() {
             pointerEvents: "none",
           }}
         />
-      </div>
+      </div> */}
       {/* Right: Story */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-6 py-16 bg-background text-text dark:bg-background-dark dark:text-text-dark max-w-2xl ml-auto">
         <p className="uppercase tracking-wide text-accent dark:text-accent-dark text-sm mb-2 font-semibold w-full text-left">
