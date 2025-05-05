@@ -1,5 +1,5 @@
 // app/components/HeroSection.tsx
-import LatticeBackground from './LatticeBackground';
+import LatticeBackground from './LatticeBackground - old';
 
 export default function HeroSection() {
     return (
