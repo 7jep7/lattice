@@ -5,8 +5,9 @@ export function drawHexGrid(
     hexSize: number
   ) {
     ctx.save();
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
     ctx.lineWidth = 1.2;
+  
     const hexHeight = Math.sqrt(3) * hexSize;
     const cols = Math.ceil(w / (hexSize * 1.5)) + 2;
     const rows = Math.ceil(h / hexHeight) + 2;
@@ -28,5 +29,7 @@ export function drawHexGrid(
         ctx.stroke();
       }
     }
+  
     ctx.restore();
   }
+  

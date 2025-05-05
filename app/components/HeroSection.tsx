@@ -1,9 +1,7 @@
 // app/components/HeroSection.tsx
-import LatticeBackground from './LatticeBackground';
-
 export default function HeroSection() {
     return (
-      <section className="relative overflow-hidden min-h-screen bg-background text-text dark:bg-background-dark dark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
+      <section className="relative overflow-hidden min-h-screenb bg-transparent text-textdark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
         
         {/* 🔹 Add animated background */}
         {/* <LatticeBackground /> */}

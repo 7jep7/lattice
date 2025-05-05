@@ -1,3 +1,4 @@
+import React from "react";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
@@ -11,7 +12,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export default function Contact() {
+const ContactPage: React.FC = () => {
   return (
     <main className="bg-inherit dark:bg-[#0b0d10] text-gray-900 dark:text-white px-6 py-12 max-w-3xl mx-auto space-y-12">
       <section className="text-center space-y-4">
@@ -89,4 +90,6 @@ export default function Contact() {
       </section>
     </main>
   );
-}
+};
+
+export default ContactPage;
