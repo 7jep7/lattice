@@ -10,6 +10,7 @@ import type { LinksFunction } from "@remix-run/node";
 import "./tailwind.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import LatticeBackgroundRenderer from './components/BackgroundLattice/LatticeBackgroundRenderer';
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,6 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body className="min-h-screen antialiased bg-background text-text dark:bg-background-dark dark:text-text-dark">
+        <LatticeBackgroundRenderer />
         <Navbar />
         <main className="max-w-7xl mx-auto px-4 py-12">
           {children}

@@ -1,8 +1,10 @@
 import type { MetaFunction } from "@remix-run/node";
 import HeroSection from "~/components/HeroSection";
 import ReadmeSection from "~/components/ReadmeSection";
-import LatticeBackgroundRenderer from '~/components/BackgroundLattice/LatticeBackgroundRenderer';
-import { LatticeShape } from '~/components/BackgroundLattice/LatticeShape';
+import LatticeBackgroundRenderer from "~/components/BackgroundLattice/LatticeBackgroundRenderer";
+import { LatticeShape } from "~/components/BackgroundLattice/LatticeShape";
+
+const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
 export const meta: MetaFunction = () => {
   return [
@@ -16,38 +18,40 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
+  const baseScrollStart = 0.5 * screenHeight;
+  const step = 0.3 * screenHeight;
+
+  const ring = [
+    { x: -2, y: -1 }, // top
+    { x: -1, y: -1 }, // top-right
+    { x: -1, y: 0 },  // bottom-right
+    { x: -2, y: 1 },  // bottom
+    { x: -3, y: 0 },  // bottom-left
+    { x: -3, y: -1 },  // top-left
+  ];
+
   return (
     <>
-      {/* 🟡 1. Canvas layer (hex grid + shapes) */}
       <LatticeBackgroundRenderer />
-
-      {/* ⚫ 2. Fullscreen background that respects light/dark mode */}
       <div className="absolute inset-0 bg-background dark:bg-background-dark z-0" />
 
-      {/* ⚪ 3. Foreground content (text, nav, etc.) */}
       <main className="relative z-10">
-        <LatticeShape
-          type="hexagon"
-          at={{ x: 0, y: 0 }}
-          showFrom={0}
-          hideAfter={2000}
-          color="rgba(255, 106, 0, 0.4)"
-          size={1}
-        />
-
-        <LatticeShape
-          type="hexagon"
-          at={{ x: 2, y: 0 }}
-          showFrom={600}
-          hideAfter={1600}
-          color="rgba(255, 106, 0, 0.4)"
-          size={1.5}
-          filled={false}
-        />
+        {ring.map((hex, i) => (
+          <LatticeShape
+            key={`${hex.x},${hex.y}`}
+            type="hexagon"
+            at={hex}
+            showFrom={baseScrollStart + i * step}
+            hideAfter={999999} // stays visible
+            animationMode="fade"
+            color="rgba(255, 106, 0, 0.2)"
+            size={1}
+            filled={true}
+          />
+        ))}
 
         <HeroSection />
         <ReadmeSection />
-        {/* Add more content sections as needed */}
       </main>
     </>
   );

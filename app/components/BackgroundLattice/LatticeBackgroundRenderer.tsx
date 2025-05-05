@@ -1,6 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { useLatticeShapeRegistry } from './useLatticeShapeRegistry';
 import { drawHexGrid } from './useHexGrid';
+import { HEX_SIZE } from '~/constants';
+import { hexToPixel } from './hexUtils';
 
 const LatticeBackgroundRenderer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -12,6 +14,9 @@ const LatticeBackgroundRenderer: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
     let animationFrameId: number;
 
     const render = () => {
@@ -21,21 +26,20 @@ const LatticeBackgroundRenderer: React.FC = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // draw faint static hex grid
-      drawHexGrid(ctx, canvas.width, canvas.height, 40);
+      drawHexGrid(ctx, canvas.width, canvas.height, HEX_SIZE, centerX, centerY);
 
       shapes.forEach((shape) => {
         if (shape.opacity <= 0.01) return;
 
-        const hexSize = 40;
-        const px = canvas.width / 2 + shape.at.x * hexSize * 1.5;
-        const py = canvas.height / 2 + shape.at.y * hexSize * Math.sqrt(3) + (shape.at.x % 2 === 0 ? 0 : hexSize * Math.sqrt(3) / 2)
+        const [px, py] = hexToPixel(shape.at.x, shape.at.y, HEX_SIZE, centerX, centerY);
+
         ;
 
         ctx.beginPath();
         for (let i = 0; i < 6; i++) {
           const angle = Math.PI / 3 * i;
-          const x = px + hexSize * shape.size * Math.cos(angle);
-          const y = py + hexSize * shape.size * Math.sin(angle);
+          const x = px + HEX_SIZE * shape.size * Math.cos(angle);
+          const y = py + HEX_SIZE * shape.size * Math.sin(angle);
           if (i === 0) ctx.moveTo(x, y);
           else ctx.lineTo(x, y);
         }
@@ -47,6 +51,7 @@ const LatticeBackgroundRenderer: React.FC = () => {
           ctx.fill();
         } else {
           ctx.strokeStyle = shape.color;
+          ctx.lineWidth = shape.size * 1.5; // or just a fixed value like 2 - only for non-filled shapes, make the border thicker.
           ctx.stroke();
         }
         ctx.globalAlpha = 1;
