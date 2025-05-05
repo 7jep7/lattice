@@ -39,15 +39,20 @@ export function useLatticeShapeRegistry(): ShapeDefinition[] {
       const updated = shapesForPage.map((shape) => {
         let opacity = 0;
 
-        if (scrollY >= shape.showFrom && scrollY <= shape.hideAfter) {
-          const range = shape.hideAfter - shape.showFrom;
-          const relY = scrollY - shape.showFrom;
+        // if (scrollY >= shape.showFrom && scrollY <= shape.hideAfter) {
+        //   const range = shape.hideAfter - shape.showFrom;
+        //   const relY = scrollY - shape.showFrom;
 
-          opacity =
-            shape.animationMode === 'fade'
-              ? Math.max(0, 1 - Math.abs((relY - range / 2) / (range / 2)))
-              : 1;
-        }
+        //   opacity =
+        //     shape.animationMode === 'fade'
+        //       ? Math.max(0, 1 - Math.abs((relY - range / 2) / (range / 2)))
+        //       : 1;
+        // }
+        if (scrollY < shape.showFrom) {
+            opacity = 0;
+          } else {
+            opacity = 1; // ✅ force visibility
+          }
 
         return { ...shape, opacity };
       });
