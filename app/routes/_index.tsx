@@ -37,11 +37,11 @@ export default function Index() {
 
         <LatticeShape
           type="hexagon"
-          at={{ x: 2, y: 0 }}
+          at={{ x: -2, y: 0 }}
           showFrom={600}
           hideAfter={1600}
           color="rgba(255, 106, 0, 0.4)"
-          size={1.5}
+          size={1}
           filled={false}
         />
 

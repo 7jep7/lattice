@@ -12,17 +12,17 @@ const shapeRegistry: ShapeDefinition[] = [];
 
 // Called by each <LatticeShape /> to add itself
 export function registerShape(def: ShapeDefinition) {
-    console.log('Registering shape:', def);
-    if (!shapeRegistry.includes(def)) {
-        shapeRegistry.push(def);
+    if (!shapeRegistry.find(s => JSON.stringify(s) === JSON.stringify(def))) {
+      shapeRegistry.push(def);
     }
-}
+  }
 
 // Hook used by the canvas renderer to fetch updated shapes with dynamic opacity
 export function useLatticeShapeRegistry(): ShapeDefinition[] {
   const [shapes, setShapes] = useState<ShapeDefinition[]>([]);
 
   useEffect(() => {
+    // shapeRegistry.length = 0; // Clear the global registry on mount
     const update = () => {
       const scrollY = window.scrollY;
 
@@ -37,7 +37,6 @@ export function useLatticeShapeRegistry(): ShapeDefinition[] {
           opacity = shape.animationMode === 'fade'
             ? Math.max(0, 1 - Math.abs((relY - range / 2) / (range / 2)))
             : 1;
-          opacity = 1
         }
 
         console.log({
