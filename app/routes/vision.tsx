@@ -89,18 +89,18 @@ export default function Vision() {
         </Highlight>
       </section>
 
-      <ResponsiveImage 
-        src="/vision/divided-robotic-age.png" 
-        darkModeSrc="/vision/divided-robotic-age.png"
-        alt="A visualization of a divided robotic future" 
-      />
-
       <section className="my-12">
         <SectionHeader>A Divided Robotic Age</SectionHeader>
         <p className="text-lg leading-relaxed">
           We are steering towards a world of division in the robotic age. Robots of Mega Corporations will be roaming our cities, in apathy to each other. 
           Delivery routes will be flown twice, and data duplicated. In short, resources are wasted.
         </p>
+
+        <ResponsiveImage 
+        src="/vision/divided-robotic-age.png" 
+        darkModeSrc="/vision/divided-robotic-age.png"
+        alt="A visualization of a divided robotic future" 
+        />
       </section>
 
       <section className="my-12">
