@@ -1,4 +1,4 @@
-import type { LatticeOptions } from './types';
+import type { LatticeOptions } from './types-old';
 import { hexToPixel } from './hexUtils';
 
 

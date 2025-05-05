@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from 'react';
 import { useScroll, useSpring, motion, useTransform } from 'framer-motion';
 import { drawHexGrid } from './useHexGrid';
 import { LatticeLine } from './useLatticeAnimation';
-import { LatticeOptions } from './types';
+import { LatticeOptions } from './types-old';
 import { Shape } from "./Shape";
 
 interface LatticeBackgroundProps {
