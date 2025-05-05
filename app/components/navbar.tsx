@@ -13,8 +13,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-background dark:bg-background-dark shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link to="/" className="text-xl font-bold tracking-tight text-primary hover:text-secondary dark:hover:text-primary transition-colors duration-150">
-          Lattice
+        <Link to="/" className="flex items-center text-xl font-bold tracking-tight text-primary hover:text-secondary dark:hover:text-primary transition-colors duration-150">
+        <img src="/lattic.png" alt="Lattice Logo" className="h-6 w-auto mr-2" />
+        <span>Lattice</span>
         </Link>
         <ul className="flex items-center gap-6 text-sm font-medium">
           {navItems.map(({ to, label }) => (
