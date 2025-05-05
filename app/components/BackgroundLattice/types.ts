@@ -20,5 +20,6 @@ export interface ShapeDefinition {
     size: number;
     opacity: number; // computed in registry based on scroll
     filled?: boolean;
+    pageKey: string;
 }
   

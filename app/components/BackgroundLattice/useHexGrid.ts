@@ -41,12 +41,6 @@ export function drawHexGrid(
             ctx.stroke();
         }
     }
-
-    // 🔴 Draw center debug dot
-    ctx.beginPath();
-    ctx.arc(cx, cy, 5, 0, Math.PI * 2);
-    ctx.fillStyle = 'red';
-    ctx.fill();
   
     ctx.restore();
   }

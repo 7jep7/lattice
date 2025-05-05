@@ -1,8 +1,10 @@
 // LatticeShape.tsx
 // This component declares a shape on the lattice background.
-// It registers the shape in the global registry and fades it in/out based on scroll.
+// It registers the shape in the global registry scoped to the current route.
+// Shapes fade in/out based on scroll as computed in the registry hook.
 
 import { useEffect } from 'react';
+import { useLocation } from '@remix-run/react';
 import { registerShape } from './useLatticeShapeRegistry';
 import { ShapeDefinition } from './types';
 
@@ -27,6 +29,8 @@ export const LatticeShape: React.FC<LatticeShapeProps> = ({
   size = 1,
   filled = true,
 }) => {
+  const location = useLocation();
+
   useEffect(() => {
     const shape: ShapeDefinition = {
       type,
@@ -36,12 +40,13 @@ export const LatticeShape: React.FC<LatticeShapeProps> = ({
       animationMode,
       color,
       size,
-      opacity: 1, // force visible for now
+      opacity: 1, // will be computed later
       filled,
+      pageKey: location.pathname,
     };
     registerShape(shape);
-    console.log('✅ Registered shapE:', shape);
-  }, []);
+    console.log('✅ Registered shape:', shape);
+  }, [location.pathname, type, at.x, at.y, showFrom, hideAfter, animationMode, color, size, filled]);
 
   return null; // purely declarative
 };
