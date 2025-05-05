@@ -22,17 +22,67 @@ export default function Vision() {
           Lattice builds that missing layer: open, neutral, and programmable.
         </p>
         <p>
-          In the future, robotic agents won’t just act — they’ll learn collectively through real-world interaction and human intervention.
+          In the future, robotic agents won't just act — they'll learn collectively through real-world interaction and human intervention.
         </p>
       </section>
 
-      <section className="space-y-2">
-        <h2 className="text-xl font-semibold">Timeline</h2>
-        <ul className="list-disc list-inside space-y-1">
-          <li><strong>NOW:</strong> Delivery bots & drones</li>
-          <li><strong>SOON:</strong> Shared training data & fallback systems</li>
-          <li><strong>FUTURE:</strong> Embodied AI collaboration at scale</li>
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold">A Divided Robotic Age</h2>
+        <p>
+          We are steering towards a world of division in the robotic age. Robots of Mega Corporations will be roaming our cities, in apathy to each other. 
+          Delivery routes will be flown twice, and data duplicated. In short, resources are wasted.
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold">A Flourishing Robotic Age</h2>
+        <p>
+          We believe in the flourishing age of robotics of collaboration, and efficiency. This requires an infrastructure shared among Mega Corps and individual 
+          synthetics and humans. A place where robots, AIs, and humans trade services and data in a free market for efficient resource allocation.
+        </p>
+        
+        <p>
+          Lattice is that. The coordination and data layer of the age of robotics. It will be the trusted infrastructure aligning incentives, 
+          providing solid yet seamless contractual agreements, and automating with the highest level of cybersecurity.
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold">Why Lattice Matters</h2>
+        <p>
+          Lattice can do what no corporation can. Corporations would always prefer their own robots and hinder collaboration across vendors. 
+          Furthermore, increasing automation of robots in our lives will lead to cybersecurity risks going parabolic. We propose a decentralized 
+          platform that weaves trust and reliability into the network itself. If our everyday life relies on robots, we better eliminate any 
+          chokepoints to the system by design. Lattice does.
+        </p>
+        
+        <p>
+          Reimagining the architecture or a coordination layer owned by none, and designed by all, will lead to the most seamless interactions. 
+          Our architecture will transform data from a proprietary liability into a trustless utility that its owner may monetize on, fully censorship-resistant.
+        </p>
+        
+        <p>
+          Alleviated from the burden of cybersecurity, compliance overhead, we focus on delivering user-centric contracts.
+        </p>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-2xl font-bold">Our Approach</h2>
+        <p>
+          Blockchain Technology has reached the maturity to handle transactions, data storage, privacy, and seamless UX.
+        </p>
+        
+        <h3 className="text-xl font-semibold mt-4">Lattice is:</h3>
+        <ul className="list-disc pl-5 space-y-2">
+          <li>A coordination and data layer where services and data can be traded between humans, AIs, and robots.</li>
+          <li>A platform that connects AIs, Humans, and Robots as equal actors.</li>
+          <li>A provider of countless blueprints of interactions and their smart contracts, to ensure seamless interactions of all parties; vetted open-source contracts.</li>
         </ul>
+        
+        <p className="mt-4">
+          In the long run, Lattice will naturally transition to a decentralized platform governed by its users. 
+          Contributors will shape its future, aligning incentives with long-term growth.
+        </p>
       </section>
     </main>
   );
