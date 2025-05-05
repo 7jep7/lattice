@@ -95,7 +95,7 @@ export default function ReadmeSection() {
         />
       </div> */}
       {/* Right: Story */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-6 py-16 bg-background text-text dark:bg-background-dark dark:text-text-dark max-w-2xl ml-auto">
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-6 py-16 bg-transparent text-text dark:text-text-dark max-w-2xl ml-auto">
         <p className="uppercase tracking-wide text-accent dark:text-accent-dark text-sm mb-2 font-semibold w-full text-left">
           README — Lattice
         </p>

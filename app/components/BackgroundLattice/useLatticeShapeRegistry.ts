@@ -15,7 +15,7 @@ export function registerShape(def: ShapeDefinition) {
     console.log('Registering shape:', def);
     if (!shapeRegistry.includes(def)) {
         shapeRegistry.push(def);
-      }
+    }
 }
 
 // Hook used by the canvas renderer to fetch updated shapes with dynamic opacity
@@ -37,9 +37,17 @@ export function useLatticeShapeRegistry(): ShapeDefinition[] {
           opacity = shape.animationMode === 'fade'
             ? Math.max(0, 1 - Math.abs((relY - range / 2) / (range / 2)))
             : 1;
+          opacity = 1
         }
 
-        return { ...shape, opacity };
+        console.log({
+            scrollY,
+            showFrom: shape.showFrom,
+            hideAfter: shape.hideAfter,
+            opacity
+          });
+
+        return { ...shape, opacity};
       });
 
       setShapes(updated);

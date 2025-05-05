@@ -19,5 +19,6 @@ export interface ShapeDefinition {
     color: string;
     size: number;
     opacity: number; // computed in registry based on scroll
+    filled?: boolean;
 }
   

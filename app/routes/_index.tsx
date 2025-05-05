@@ -17,32 +17,38 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <main style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* Faint hex lattice and animated shapes */}
+    <>
+      {/* 🟡 1. Canvas layer (hex grid + shapes) */}
       <LatticeBackgroundRenderer />
 
-      {/* Declarative shapes on the grid */}
-      <LatticeShape
-        type="hexagon"
-        at={{ x: 0, y: 0 }}
-        showFrom={0}
-        hideAfter={99999}
-        color="rgba(255, 106, 0, 0.5)"
-        size={2}
-      />
-      <LatticeShape
-        type="hexagon"
-        at={{ x: -2, y: 1 }}
-        showFrom={400}
-        hideAfter={99999}
-        color="rgba(255, 106, 0, 0.1)"
-        size={1}
-      />
+      {/* ⚫ 2. Fullscreen background that respects light/dark mode */}
+      <div className="absolute inset-0 bg-background dark:bg-background-dark z-0" />
 
-      {/* Your content */}
-      <HeroSection />
-      <ReadmeSection />
-      {/* Add other sections here */}
-    </main>
+      {/* ⚪ 3. Foreground content (text, nav, etc.) */}
+      <main className="relative z-10">
+        <LatticeShape
+          type="hexagon"
+          at={{ x: 0, y: 0 }}
+          showFrom={0}
+          hideAfter={2000}
+          color="rgba(255, 106, 0, 0.4)"
+          size={1}
+        />
+
+        <LatticeShape
+          type="hexagon"
+          at={{ x: 2, y: 0 }}
+          showFrom={600}
+          hideAfter={1600}
+          color="rgba(255, 106, 0, 0.4)"
+          size={1.5}
+          filled={false}
+        />
+
+        <HeroSection />
+        <ReadmeSection />
+        {/* Add more content sections as needed */}
+      </main>
+    </>
   );
 }

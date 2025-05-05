@@ -14,6 +14,7 @@ interface LatticeShapeProps {
   animationMode?: 'fade' | 'trace';
   color?: string;
   size?: number;
+  filled?: boolean;
 }
 
 export const LatticeShape: React.FC<LatticeShapeProps> = ({
@@ -24,6 +25,7 @@ export const LatticeShape: React.FC<LatticeShapeProps> = ({
   animationMode = 'fade',
   color = 'rgba(255, 106, 0, 0.1)',
   size = 1,
+  filled = true,
 }) => {
   useEffect(() => {
     const shape: ShapeDefinition = {
@@ -34,9 +36,11 @@ export const LatticeShape: React.FC<LatticeShapeProps> = ({
       animationMode,
       color,
       size,
-      opacity: 0,
+      opacity: 1, // force visible for now
+      filled,
     };
     registerShape(shape);
+    console.log('✅ Registered shapE:', shape);
   }, []);
 
   return null; // purely declarative
