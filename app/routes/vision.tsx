@@ -90,7 +90,7 @@ export default function Vision() {
       </section>
 
       <section className="my-12">
-        <SectionHeader>A Divided Robotic Age</SectionHeader>
+        <SectionHeader>Our Motivation: A Divided Robotic Age</SectionHeader>
         <p className="text-lg leading-relaxed">
           We are steering towards a world of division in the robotic age. Robots of Mega Corporations will be roaming our cities, in apathy to each other. 
           Delivery routes will be flown twice, and data duplicated. In short, resources are wasted.
@@ -104,7 +104,7 @@ export default function Vision() {
       </section>
 
       <section className="my-12">
-        <SectionHeader>A Flourishing Robotic Age</SectionHeader>
+        <SectionHeader>Our Aim: A Flourishing Robotic Age</SectionHeader>
         <p className="text-lg leading-relaxed">
           We believe in the flourishing age of robotics of collaboration, and efficiency. This requires an infrastructure shared among Mega Corps and individual 
           synthetics and humans. A place where robots, AIs, and humans trade services and data in a free market for efficient resource allocation.
