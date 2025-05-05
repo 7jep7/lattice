@@ -9,6 +9,34 @@ export const meta: MetaFunction = () => [
   },
 ];
 
+// Image component that handles dark/light mode appropriately
+function ResponsiveImage({ 
+  src, 
+  darkModeSrc = src, // Optional different image for dark mode
+  alt, 
+  className = "" 
+}: { 
+  src: string; 
+  darkModeSrc?: string; 
+  alt: string; 
+  className?: string;
+}) {
+  return (
+    <div className={`my-8 rounded-lg overflow-hidden shadow-md dark:shadow-gray-800 ${className}`}>
+      <img 
+        src={src} 
+        alt={alt} 
+        className="w-full h-auto object-cover block dark:hidden" 
+      />
+      <img 
+        src={darkModeSrc} 
+        alt={alt} 
+        className="w-full h-auto object-cover hidden dark:block" 
+      />
+    </div>
+  );
+}
+
 export default function Vision() {
   return (
     <main className="bg-background text-text dark:bg-background-dark dark:text-text-dark px-6 py-12 max-w-3xl mx-auto space-y-10">
@@ -25,6 +53,12 @@ export default function Vision() {
           In the future, robotic agents won't just act — they'll learn collectively through real-world interaction and human intervention.
         </p>
       </section>
+
+      <ResponsiveImage 
+        src="/vision/divided-robotic-age.png" 
+        darkModeSrc="/vision/divided-robotic-age.png"
+        alt="A visualization of a divided robotic future" 
+      />
 
       <section className="space-y-4">
         <h2 className="text-2xl font-bold">A Divided Robotic Age</h2>
@@ -46,6 +80,13 @@ export default function Vision() {
           providing solid yet seamless contractual agreements, and automating with the highest level of cybersecurity.
         </p>
       </section>
+
+      <ResponsiveImage 
+        src="/vision/flourishing-robotic-age.jpg" 
+        darkModeSrc="/vision/flourishing-robotic-age-dark.jpg"
+        alt="A future of collaborative robotics" 
+        className="my-10" 
+      />
 
       <section className="space-y-4">
         <h2 className="text-2xl font-bold">Why Lattice Matters</h2>
