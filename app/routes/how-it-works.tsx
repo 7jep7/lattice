@@ -27,6 +27,12 @@ export default function HowItWorks() {
         <p>
           To power autonomous robotic coordination, scale matters on day one. We believe in the SUI blockchain and technology stack.
         </p>
+
+        <div className="my-8 flex justify-center">
+          <img src="/how/walrus_sui.webp" alt="Sui Walrus" className="w-full max-w-md dark:hidden" />
+          <img src="/how/walrus_sui.webp" alt="Sui Walrus Dark" className="w-full max-w-md hidden dark:block" />
+        </div>
+
         <p>
           Sui was developed by Mysten Labs, founded in 2021 by former Meta engineers from the Diem blockchain project, aiming to create an innovative, internet-scale programmable blockchain platform from the ground up.
         </p>
@@ -64,6 +70,12 @@ export default function HowItWorks() {
         <p>
           As an ecosystem, Lattice needs its own fuel, its own unit of exchange that users interact with implicitly or directly. The robotic age is going to be powered by <span className="font-semibold">$Silicon</span>. Silicon will be the utility and governance token of the network.
         </p>
+
+        <div className="my-8 flex justify-center">
+          <img src="/how/ecosystem.svg" alt="Lattice Ecosystem" className="w-full max-w-lg dark:hidden" />
+          <img src="/how/ecosystem_dark.svg" alt="Lattice Ecosystem Dark" className="w-full max-w-lg hidden dark:block" />
+        </div>
+
       </section>
 
       <section className="space-y-6">
