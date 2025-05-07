@@ -6,6 +6,15 @@ export interface HexCoord {
     y: number;
 }
 
+export interface TraceEdge {
+    at: HexCoord;             // Which hex the edge belongs to
+    edge: 0 | 1 | 2 | 3 | 4 | 5; // Clockwise edge index (E, NE, NW, W, SW, SE)
+    showFrom: number;
+    hideAfter: number;
+    color: string;
+    opacity: number;          // Controlled by registry
+}
+
 export type ShapeType = 'hexagon'; // later: triangle, diamond, ring, etc.
 
 export type AnimationMode = 'fade' | 'trace';
