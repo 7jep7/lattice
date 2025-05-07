@@ -17,7 +17,7 @@ export default function HowItWorks() {
         <h1 className="text-4xl md:text-5xl font-bold mb-6">How it works</h1>
         
         <p className="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">
-           Connecting Robots, AIs and humans seamlessly – nativly secure, scalable and resiliant.
+           Connecting Robots, AIs and humans seamlessly – natively secure, scalable and resilient.
         </p>
       
       </section>
