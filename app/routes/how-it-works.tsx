@@ -72,8 +72,8 @@ export default function HowItWorks() {
         </p>
 
         <div className="my-8 flex justify-center">
-          <img src="/how/ecosystem.svg" alt="Lattice Ecosystem" className="w-full max-w-lg dark:hidden" />
-          <img src="/how/ecosystem_dark.svg" alt="Lattice Ecosystem Dark" className="w-full max-w-lg hidden dark:block" />
+          <img src="/how/ecosystem.png" alt="Lattice Ecosystem" className="w-full max-w-lg dark:hidden" />
+          <img src="/how/ecosystem_dark.png" alt="Lattice Ecosystem Dark" className="w-full max-w-lg hidden dark:block" />
         </div>
 
       </section>
