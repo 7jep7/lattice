@@ -9,7 +9,17 @@ export function drawHexGrid(
     cy: number
   ) {
     ctx.save();
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.025)';
+    
+    // Check if dark mode is active
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    
+    // Use appropriate color based on theme
+    if (isDarkMode) {
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.025)'; // White with low opacity for dark mode
+    } else {
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.04)'; // Black with slightly higher opacity for light mode
+    }
+    
     ctx.lineWidth = 1.2;
   
     const hexHeight = Math.sqrt(3) * hexSize;
@@ -44,4 +54,3 @@ export function drawHexGrid(
   
     ctx.restore();
   }
-  
