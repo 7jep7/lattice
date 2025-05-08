@@ -4,7 +4,7 @@ import { drawHexGrid } from './useHexGrid';
 import { HEX_SIZE } from '~/constants';
 import { hexToPixel } from './hexUtils';
 import { useTraceEdgeRegistry } from './useTraceEdgeRegistry';
-import { getEdgeVertices } from './hexUtils';
+import { getHexCorner } from './hexUtils';
 
 const LatticeBackgroundRenderer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -18,14 +18,14 @@ const LatticeBackgroundRenderer: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-
     let animationFrameId: number;
 
     const render = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -66,17 +66,33 @@ const LatticeBackgroundRenderer: React.FC = () => {
       traceEdges.forEach((edge) => {
         if (edge.opacity <= 0) return;
       
-        const [a, b] = getEdgeVertices(edge.at, edge.edge, HEX_SIZE, canvas.width / 2, canvas.height / 2);
-      
+        //get edge vertices in pixel cartesian coordinates
+        const [cx, cy] = hexToPixel(edge.edge.at.x, edge.edge.at.y, HEX_SIZE, centerX, centerY);
+        const [x1, y1] = getHexCorner(cx, cy, HEX_SIZE, edge.edge.startVertex);
+        const [x2, y2] = getHexCorner(cx, cy, HEX_SIZE, edge.edge.endVertex);
+
+        //draw them gradually as the viewers scrolls (based on edge.progress)
+        const t = Math.max(0, Math.min(1, edge.progress ?? 1)); // clamp progress
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+        
         ctx.beginPath();
-        ctx.moveTo(a[0], a[1]);
-        ctx.lineTo(b[0], b[1]);
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x1 + dx * t, y1 + dy * t);
         ctx.strokeStyle = edge.color;
         ctx.globalAlpha = edge.opacity;
-        ctx.lineWidth = 2.5;
+        ctx.lineWidth = 2;
         ctx.stroke();
         ctx.globalAlpha = 1;
+
+        console.log('🎯 traceEdges visible now:', traceEdges);
+
       });
+
+      ctx.beginPath();
+      ctx.arc(canvas.width / 2, canvas.height / 2, 10, 0, 2 * Math.PI);
+      ctx.fillStyle = 'red';
+      ctx.fill();
 
       animationFrameId = requestAnimationFrame(render);
     };

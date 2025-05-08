@@ -35,17 +35,20 @@ export function useTraceEdgeRegistry(): TraceEdge[] {
 
       const visibleEdges = allEdges.map((edge) => {
         let opacity = 0;
+        let progress = 0;
 
         if (scrollY < edge.showFrom) {
           opacity = 0;
+          progress = 0;
         } else if (scrollY >= edge.hideAfter) {
           opacity = 1;
+          progress = 1;
         } else {
-          const progress = (scrollY - edge.showFrom) / (edge.hideAfter - edge.showFrom);
+          progress = (scrollY - edge.showFrom) / (edge.hideAfter - edge.showFrom);
           opacity = Math.min(1, progress);
         }
-
-        return { ...edge, opacity };
+        // opacity = 1
+        return { ...edge, opacity, progress };
       });
 
       setEdges(visibleEdges);
