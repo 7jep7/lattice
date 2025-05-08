@@ -3,10 +3,15 @@ import { useLatticeShapeRegistry } from './useLatticeShapeRegistry';
 import { drawHexGrid } from './useHexGrid';
 import { HEX_SIZE } from '~/constants';
 import { hexToPixel } from './hexUtils';
+import { useTraceEdgeRegistry } from './useTraceEdgeRegistry';
+import { registerTraceEdge } from './useTraceEdgeRegistry';
+import { getEdgeVertices } from './hexUtils';
 
 const LatticeBackgroundRenderer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const shapes = useLatticeShapeRegistry();
+
+  const traceEdges = useTraceEdgeRegistry();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -19,6 +24,16 @@ const LatticeBackgroundRenderer: React.FC = () => {
 
     let animationFrameId: number;
 
+    //for testing
+    registerTraceEdge({
+        at: { x: -2, y: 0 },
+        edge: 0,
+        showFrom: 0,
+        hideAfter: 999999,
+        color: 'rgba(255, 106, 0, 0.7)',
+        opacity: 1,
+    });
+
     const render = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -28,6 +43,7 @@ const LatticeBackgroundRenderer: React.FC = () => {
       // draw faint static hex grid
       drawHexGrid(ctx, canvas.width, canvas.height, HEX_SIZE, centerX, centerY);
 
+      //draw Lattice shapes (filled hexagons)
       shapes.forEach((shape) => {
         if (shape.opacity <= 0.01) return;
 
@@ -54,6 +70,22 @@ const LatticeBackgroundRenderer: React.FC = () => {
           ctx.lineWidth = shape.size * 1.5; // or just a fixed value like 2 - only for non-filled shapes, make the border thicker.
           ctx.stroke();
         }
+        ctx.globalAlpha = 1;
+      });
+
+      //draw Lattice trace edges
+      traceEdges.forEach((edge) => {
+        if (edge.opacity <= 0) return;
+      
+        const [a, b] = getEdgeVertices(edge.at, edge.edge, HEX_SIZE, canvas.width / 2, canvas.height / 2);
+      
+        ctx.beginPath();
+        ctx.moveTo(a[0], a[1]);
+        ctx.lineTo(b[0], b[1]);
+        ctx.strokeStyle = edge.color;
+        ctx.globalAlpha = edge.opacity;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
         ctx.globalAlpha = 1;
       });
 

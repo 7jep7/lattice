@@ -1,9 +1,34 @@
 // types.ts
 // Shared types used across the BackgroundLattice system
 
+export type TracePathMode = 'appear' | 'flash' | 'trace';
+
+
 export interface HexCoord {
     x: number;
     y: number;
+}
+
+export interface TraceEdge {
+    at: HexCoord;             // Which hex the edge belongs to
+    edge: 0 | 1 | 2 | 3 | 4 | 5; // Clockwise edge index (E, NE, NW, W, SW, SE)
+    showFrom: number;
+    hideAfter: number;
+    color: string;
+    opacity: number;          // Controlled by registry
+    progress: number;
+    pathId?: string;
+}
+
+export interface TracePath {
+    id: string;
+    hex: HexCoord;
+    edges: number[];
+    showFrom: number;
+    step: number;
+    hold: number;
+    mode: TracePathMode;
+    color: string;
 }
 
 export type ShapeType = 'hexagon'; // later: triangle, diamond, ring, etc.

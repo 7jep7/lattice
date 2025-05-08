@@ -3,6 +3,10 @@ import HeroSection from "~/components/HeroSection";
 import ReadmeSection from "~/components/ReadmeSection";
 import LatticeBackgroundRenderer from "~/components/BackgroundLattice/LatticeBackgroundRenderer";
 import { LatticeShape } from "~/components/BackgroundLattice/LatticeShape";
+import { useEffect } from 'react';
+import { registerTraceEdge } from '~/components/BackgroundLattice/useTraceEdgeRegistry';
+import { TracePath } from '~/components/BackgroundLattice/types';
+import { expandTracePath } from '~/components/BackgroundLattice/tracePathUtils';
 
 const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
@@ -29,6 +33,35 @@ export default function Index() {
     { x: -3, y: 0 },  // bottom-left
     { x: -3, y: -1 },  // top-left
   ];
+
+  //for testing
+  useEffect(() => {
+    registerTraceEdge({
+      at: { x: -2, y: 0 },
+      edge: 0,
+      showFrom: window.innerHeight * 0.5,
+      hideAfter: window.innerHeight * 4,
+      color: 'rgba(255, 106, 0, 0.7)',
+      opacity: 1,
+      progress: 0,
+      pathId: 'test-path',
+    });
+
+    const ringPath: TracePath = {
+      id: "hex-ring-1",
+      hex: { x: -2, y: 0 },
+      edges: [0, 1, 2, 3, 4, 5],
+      showFrom: window.innerHeight * 0.5,
+      step: window.innerHeight * 0.3,
+      hold: window.innerHeight * 0.8,
+      mode: "appear", // later: 'flash' or 'trace'
+      color: "rgba(255, 106, 0, 0.8)",
+    };
+
+    const edges = expandTracePath(ringPath);
+  edges.forEach(registerTraceEdge);
+
+  }, []);
 
   return (
     <>
