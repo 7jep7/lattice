@@ -4,7 +4,6 @@ import { drawHexGrid } from './useHexGrid';
 import { HEX_SIZE } from '~/constants';
 import { hexToPixel } from './hexUtils';
 import { useTraceEdgeRegistry } from './useTraceEdgeRegistry';
-import { registerTraceEdge } from './useTraceEdgeRegistry';
 import { getEdgeVertices } from './hexUtils';
 
 const LatticeBackgroundRenderer: React.FC = () => {
@@ -23,16 +22,6 @@ const LatticeBackgroundRenderer: React.FC = () => {
     const centerY = canvas.height / 2;
 
     let animationFrameId: number;
-
-    //for testing
-    registerTraceEdge({
-        at: { x: -2, y: 0 },
-        edge: 0,
-        showFrom: 0,
-        hideAfter: 999999,
-        color: 'rgba(255, 106, 0, 0.7)',
-        opacity: 1,
-    });
 
     const render = () => {
       canvas.width = window.innerWidth;
