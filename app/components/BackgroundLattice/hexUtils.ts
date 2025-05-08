@@ -61,26 +61,3 @@ export function getHexCorner(cx: number, cy: number, radius: number, i: number):
       cy + radius * Math.sin(angle_rad),
     ];
 }
-
-/**
- * Calculates the vertices of a specific edge of a hexagonal tile.
- *
- * @param hex - The coordinates of the hexagonal tile.
- * @param edge - The index of the edge (0 to 5) for which the vertices are to be calculated.
- * @param radius - The radius of the hexagon.
- * @param centerX - The x-coordinate of the center of the hexagonal grid.
- * @param centerY - The y-coordinate of the center of the hexagonal grid.
- * @returns A tuple containing two vertices, each represented as a tuple of x and y cartesian pixel coordinates.
- */
-export function getEdgeVertices(
-    hex: HexCoord,
-    edge: number,
-    radius: number,
-    centerX: number,
-    centerY: number
-  ): [[number, number], [number, number]] {
-    const [cx, cy] = hexToPixel(hex.x, hex.y, radius, centerX, centerY);
-    const a = getHexCorner(cx, cy, radius, edge);
-    const b = getHexCorner(cx, cy, radius, (edge + 1) % 6);
-    return [a, b];
-}

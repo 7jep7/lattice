@@ -10,7 +10,7 @@ import type { LinksFunction } from "@remix-run/node";
 import "./tailwind.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import LatticeBackgroundRenderer from './components/BackgroundLattice/LatticeBackgroundRenderer';
+import LatticeBackgroundRenderer from "./components/BackgroundLattice/LatticeBackgroundRenderer";
 
 export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },

@@ -2,11 +2,11 @@ import type { MetaFunction } from "@remix-run/node";
 import HeroSection from "~/components/HeroSection";
 import ReadmeSection from "~/components/ReadmeSection";
 import LatticeBackgroundRenderer from "~/components/BackgroundLattice/LatticeBackgroundRenderer";
-import { LatticeShape } from "~/components/BackgroundLattice/LatticeShape";
 import { useEffect } from 'react';
 import { registerTraceEdge } from '~/components/BackgroundLattice/useTraceEdgeRegistry';
-import { TracePath } from '~/components/BackgroundLattice/types';
-import { expandTracePath } from '~/components/BackgroundLattice/tracePathUtils';
+import { VertexTracePath } from "~/components/BackgroundLattice/VertexTracePath";
+import { latticePaths } from '~/components/BackgroundLattice/tracePaths';
+
 
 const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
@@ -36,30 +36,9 @@ export default function Index() {
 
   //for testing
   useEffect(() => {
-    registerTraceEdge({
-      at: { x: -2, y: 0 },
-      edge: 0,
-      showFrom: window.innerHeight * 0.5,
-      hideAfter: window.innerHeight * 4,
-      color: 'rgba(255, 106, 0, 0.7)',
-      opacity: 1,
-      progress: 0,
-      pathId: 'test-path',
+    latticePaths.forEach((path) => {
+      path.generateTraceEdges().forEach(registerTraceEdge);
     });
-
-    const ringPath: TracePath = {
-      id: "hex-ring-1",
-      hex: { x: -2, y: 0 },
-      edges: [0, 1, 2, 3, 4, 5],
-      showFrom: window.innerHeight * 0.5,
-      step: window.innerHeight * 0.3,
-      hold: window.innerHeight * 0.8,
-      mode: "appear", // later: 'flash' or 'trace'
-      color: "rgba(255, 106, 0, 0.8)",
-    };
-
-    const edges = expandTracePath(ringPath);
-  edges.forEach(registerTraceEdge);
 
   }, []);
 
@@ -69,7 +48,7 @@ export default function Index() {
       <div className="absolute inset-0 bg-background dark:bg-background-dark z-0" />
 
       <main className="relative z-10">
-        {ring.map((hex, i) => (
+        {/* {ring.map((hex, i) => (
           <LatticeShape
             key={`${hex.x},${hex.y}`}
             type="hexagon"
@@ -81,7 +60,7 @@ export default function Index() {
             size={1}
             filled={true}
           />
-        ))}
+        ))} */}
 
         <HeroSection />
         <ReadmeSection />
