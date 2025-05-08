@@ -3,7 +3,7 @@
 
 import { useEffect, useState } from 'react';
 import { useLocation } from '@remix-run/react';
-import { TraceEdge } from './types';
+import { TraceEdge } from './VertexTracePath';
 
 // In-memory registry, keyed by route
 const traceEdgeRegistry: Record<string, TraceEdge[]> = {};
@@ -22,6 +22,30 @@ export function registerTraceEdge(edge: TraceEdge) {
   }
 }
 
+export function getTraceProgress(edge: TraceEdge, scrollY: number): number {
+  if (scrollY < edge.startAnimationIn) return 0;
+  if (scrollY < edge.endAnimationIn) {
+    return (scrollY - edge.startAnimationIn) / (edge.endAnimationIn - edge.startAnimationIn);
+  }
+  if (scrollY < edge.startAnimationOut) return 1;
+  if (scrollY < edge.endAnimationOut) {
+    return 1 - (scrollY - edge.startAnimationOut) / (edge.endAnimationOut - edge.startAnimationOut);
+  }
+  return 0;
+}
+
+export function getFadeOpacity(edge: TraceEdge, scrollY: number): number {
+  if (scrollY < edge.startAnimationIn) return 0;
+  if (scrollY < edge.endAnimationIn) {
+    return ((scrollY - edge.startAnimationIn) / (edge.endAnimationIn - edge.startAnimationIn)) * edge.targetOpacity;
+  }
+  if (scrollY < edge.startAnimationOut) return edge.targetOpacity;
+  if (scrollY < edge.endAnimationOut) {
+    return ((edge.endAnimationOut - scrollY) / (edge.endAnimationOut - edge.startAnimationOut)) * edge.targetOpacity;
+  }
+  return 0;
+}
+
 // Hook used by canvas renderer
 export function useTraceEdgeRegistry(): TraceEdge[] {
   const location = useLocation();
@@ -34,21 +58,12 @@ export function useTraceEdgeRegistry(): TraceEdge[] {
       const allEdges = traceEdgeRegistry[pageKey] ?? [];
 
       const visibleEdges = allEdges.map((edge) => {
-        let opacity = 0;
-        let progress = 0;
-
-        if (scrollY < edge.showFrom) {
-          opacity = 0;
-          progress = 0;
-        } else if (scrollY >= edge.hideAfter) {
-          opacity = 1;
-          progress = 1;
-        } else {
-          progress = (scrollY - edge.showFrom) / (edge.hideAfter - edge.showFrom);
-          opacity = Math.min(1, progress);
-        }
-        // opacity = 1
-        return { ...edge, opacity, progress };
+        const progress = getTraceProgress(edge, scrollY); // for 'trace' and 'flash'
+        const opacity = edge.targetOpacity !== undefined
+          ? getFadeOpacity(edge, scrollY)
+          : 1;
+      
+        return { ...edge, progress, opacity };
       });
 
       setEdges(visibleEdges);

@@ -9,28 +9,6 @@ export interface HexCoord {
     y: number;
 }
 
-/**
- * Represents a directed edge on the hex lattice.
- * - `at`: the hex the edge is drawn on (hex that owns `startVertex`)
- * - `startVertex`: the index of the starting vertex (0–5, clockwise)
- * - `endVertex`: the index of the ending vertex (must be adjacent to startVertex)
- */
-export interface VertexEdge {
-    at: HexCoord;
-    startVertex: 0 | 1 | 2 | 3 | 4 | 5;
-    endVertex: 0 | 1 | 2 | 3 | 4 | 5;// End vertex of edge (must be adjacent to startVertex) - there are always only two possible numbers, as it needs to be adjacent.
-}
-
-export interface TraceEdge {
-    edge: VertexEdge;
-    showFrom: number;
-    hideAfter: number;
-    color: string;
-    opacity: number;
-    progress: number;
-    pathId?: string;
-  }
-
 //a path that is drawn along the edges of the hexes
 export interface VertexTracePath {
     id: string;
@@ -38,12 +16,15 @@ export interface VertexTracePath {
       hex: HexCoord;         // The hex that owns the starting vertex
       vertex: 0 | 1 | 2 | 3 | 4 | 5; // Which vertex on the hex (clockwise: NE=0, E=1, etc.)
     };
-    directions: number[];     // Directions from vertex to vertex (0 = NE, 1 = E, ..., 5 = NW)
-    showFrom: number;
-    step: number;
-    hold: number;
+    directions: (0 | 1 | 2 | 3 | 4 | 5)[];    // Directions from vertex to vertex (0 = NE, 1 = E, ..., 5 = NW)
+    
     mode: TracePathMode;
+    startAnimationIn: number;
+    endAnimationIn?: number;   // will default to startAnimationIn + 100
+    startAnimationOut: number;
+    endAnimationOut?: number;  // will default to startAnimationOut + 100
     color: string;
+    targetOpacity?: number; // default to 1
 }
 
 export type ShapeType = 'hexagon'; // later: triangle, diamond, ring, etc.

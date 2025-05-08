@@ -4,10 +4,8 @@ import ReadmeSection from "~/components/ReadmeSection";
 import LatticeBackgroundRenderer from "~/components/BackgroundLattice/LatticeBackgroundRenderer";
 import { LatticeShape } from "~/components/BackgroundLattice/LatticeShape";
 import { useEffect } from 'react';
-import { traverseVertexPath } from '~/components/BackgroundLattice/hexPathUtils';
 import { registerTraceEdge } from '~/components/BackgroundLattice/useTraceEdgeRegistry';
-import { VertexTracePath } from '~/components/BackgroundLattice/types';
-
+import { VertexTracePath } from "~/components/BackgroundLattice/VertexTracePath";
 
 const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
@@ -39,24 +37,28 @@ export default function Index() {
   useEffect(() => {
 
 
-    const testPath: VertexTracePath = {
-      id: 'test-hex-path',
-      start_vertex: {
-        hex: { x: -2, y: 0 },
-        vertex: 0, // NE
-      },
-      directions: [2, 3, 4, 5, 4], // makes a path
-      showFrom: window.innerHeight * 0.5,
-      step: window.innerHeight * 0.3,
-      hold: window.innerHeight * 0.5,
+    const tracePath = new VertexTracePath({
+      id: 'trace-test',
+      start_vertex: { hex: { x: -4, y: 0 }, vertex: 0 },
+      directions: [2, 3, 4, 5], // a short zig-zag
       mode: 'trace',
-      color: 'rgba(255, 106, 0, 0.8)',
-    };
-    
-    const edges = traverseVertexPath(testPath);
-    console.log('✅ Edges to register:', edges);
+      startAnimationIn: window.innerHeight * 0.5,
+      startAnimationOut: window.innerHeight * 1.2,
+      color: 'rgba(255, 106, 0, 1)',
+    });
 
-    edges.forEach(registerTraceEdge);
+    const flashPath = new VertexTracePath({
+      id: 'trace-test',
+      start_vertex: { hex: { x: -2, y: 0 }, vertex: 0 },
+      directions: [2, 3, 4, 5], // a short zig-zag
+      mode: 'flash',
+      startAnimationIn: window.innerHeight * 0.5,
+      startAnimationOut: window.innerHeight * 1.2,
+      color: 'rgba(255, 106, 0, 1)',
+    });
+
+    tracePath.generateTraceEdges().forEach(registerTraceEdge);
+    flashPath.generateTraceEdges().forEach(registerTraceEdge);
 
   }, []);
 

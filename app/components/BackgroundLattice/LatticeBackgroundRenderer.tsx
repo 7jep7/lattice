@@ -5,6 +5,7 @@ import { HEX_SIZE } from '~/constants';
 import { hexToPixel } from './hexUtils';
 import { useTraceEdgeRegistry } from './useTraceEdgeRegistry';
 import { getHexCorner } from './hexUtils';
+import { getTraceProgress, getFadeOpacity } from './useTraceEdgeRegistry';
 
 const LatticeBackgroundRenderer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -64,23 +65,33 @@ const LatticeBackgroundRenderer: React.FC = () => {
 
       //draw Lattice trace edges
       traceEdges.forEach((edge) => {
-        if (edge.opacity <= 0) return;
+        if (edge.targetOpacity <= 0) return;
       
         //get edge vertices in pixel cartesian coordinates
-        const [cx, cy] = hexToPixel(edge.edge.at.x, edge.edge.at.y, HEX_SIZE, centerX, centerY);
+        const [cx, cy] = hexToPixel(edge.edge.hex.x, edge.edge.hex.y, HEX_SIZE, centerX, centerY);
         const [x1, y1] = getHexCorner(cx, cy, HEX_SIZE, edge.edge.startVertex);
         const [x2, y2] = getHexCorner(cx, cy, HEX_SIZE, edge.edge.endVertex);
 
         //draw them gradually as the viewers scrolls (based on edge.progress)
-        const t = Math.max(0, Math.min(1, edge.progress ?? 1)); // clamp progress
+        const scrollY = window.scrollY;
+        const progress = getTraceProgress(edge, scrollY);
+        const opacity = getFadeOpacity(edge, scrollY); // this returns 0 unless in 'appear' mode        
+        
         const dx = x2 - x1;
         const dy = y2 - y1;
         
         ctx.beginPath();
-        ctx.moveTo(x1, y1);
-        ctx.lineTo(x1 + dx * t, y1 + dy * t);
+        const isReversing = edge.mode === 'flash' && scrollY >= edge.startAnimationOut;
+
+        if (isReversing) { //draw the direction reversed
+            ctx.moveTo(x2, y2);
+            ctx.lineTo(x2 + (x1 - x2) * progress, y2 + (y1 - y2) * progress);
+        }else{
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x1 + dx * progress, y1 + dy * progress);
+        }
         ctx.strokeStyle = edge.color;
-        ctx.globalAlpha = edge.opacity;
+        ctx.globalAlpha = opacity;
         ctx.lineWidth = 2;
         ctx.stroke();
         ctx.globalAlpha = 1;
