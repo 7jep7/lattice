@@ -3,9 +3,11 @@ import { TracePath, TraceEdge } from './types';
 export function expandTracePath(path: TracePath): TraceEdge[] {
   const { id, hex, edges, showFrom, step, hold, mode, color } = path;
 
-  return edges.map((edge, i) => {
+  return edges.map((edgeIndex, i) => {
     const edgeStart = showFrom + i * step;
     const edgeEnd = edgeStart + step;
+
+    const edge = edgeIndex as 0 | 1 | 2 | 3 | 4 | 5;
 
     if (mode === 'appear') {
       return {
