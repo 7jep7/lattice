@@ -29,17 +29,17 @@ export interface VertexTracePath {
 
 export type ShapeType = 'hexagon'; // later: triangle, diamond, ring, etc.
 
-export type AnimationMode = 'fade' | 'trace';
+// export type AnimationMode = 'fade' | 'trace';
 
-export interface ShapeDefinition {
-    type: ShapeType;
-    at: HexCoord;
-    showFrom: number;
-    hideAfter: number;
-    animationMode: AnimationMode;
-    color: string;
-    size: number;
-    opacity: number; // computed in registry based on scroll
-    filled?: boolean;
-    pageKey: string;
-}
+// export interface ShapeDefinition {
+//     type: ShapeType;
+//     at: HexCoord;
+//     showFrom: number;
+//     hideAfter: number;
+//     animationMode: AnimationMode;
+//     color: string;
+//     size: number;
+//     opacity: number; // computed in registry based on scroll
+//     filled?: boolean;
+//     pageKey: string;
+// }

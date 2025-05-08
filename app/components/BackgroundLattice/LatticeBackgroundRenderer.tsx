@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { useLatticeShapeRegistry } from './useLatticeShapeRegistry';
+// import { useLatticeShapeRegistry } from './useLatticeShapeRegistry';
 import { drawHexGrid } from './useHexGrid';
 import { HEX_SIZE } from '~/constants';
 import { hexToPixel } from './hexUtils';
@@ -9,7 +9,7 @@ import { getTraceProgress, getFadeOpacity } from './useTraceEdgeRegistry';
 
 const LatticeBackgroundRenderer: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const shapes = useLatticeShapeRegistry();
+//   const shapes = useLatticeShapeRegistry();
 
   const traceEdges = useTraceEdgeRegistry();
 
@@ -34,34 +34,34 @@ const LatticeBackgroundRenderer: React.FC = () => {
       drawHexGrid(ctx, canvas.width, canvas.height, HEX_SIZE, centerX, centerY);
 
       //draw Lattice shapes (filled hexagons)
-      shapes.forEach((shape) => {
-        if (shape.opacity <= 0.01) return;
+    //   shapes.forEach((shape) => {
+    //     if (shape.opacity <= 0.01) return;
 
-        const [px, py] = hexToPixel(shape.at.x, shape.at.y, HEX_SIZE, centerX, centerY);
+    //     const [px, py] = hexToPixel(shape.at.x, shape.at.y, HEX_SIZE, centerX, centerY);
 
-        ;
+    //     ;
 
-        ctx.beginPath();
-        for (let i = 0; i < 6; i++) {
-          const angle = Math.PI / 3 * i;
-          const x = px + HEX_SIZE * shape.size * Math.cos(angle);
-          const y = py + HEX_SIZE * shape.size * Math.sin(angle);
-          if (i === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.closePath();
+    //     ctx.beginPath();
+    //     for (let i = 0; i < 6; i++) {
+    //       const angle = Math.PI / 3 * i;
+    //       const x = px + HEX_SIZE * shape.size * Math.cos(angle);
+    //       const y = py + HEX_SIZE * shape.size * Math.sin(angle);
+    //       if (i === 0) ctx.moveTo(x, y);
+    //       else ctx.lineTo(x, y);
+    //     }
+    //     ctx.closePath();
 
-        ctx.globalAlpha = shape.opacity;
-        if (shape.filled !== false) {
-          ctx.fillStyle = shape.color;
-          ctx.fill();
-        } else {
-          ctx.strokeStyle = shape.color;
-          ctx.lineWidth = shape.size * 1.5; // or just a fixed value like 2 - only for non-filled shapes, make the border thicker.
-          ctx.stroke();
-        }
-        ctx.globalAlpha = 1;
-      });
+    //     ctx.globalAlpha = shape.opacity;
+    //     if (shape.filled !== false) {
+    //       ctx.fillStyle = shape.color;
+    //       ctx.fill();
+    //     } else {
+    //       ctx.strokeStyle = shape.color;
+    //       ctx.lineWidth = shape.size * 1.5; // or just a fixed value like 2 - only for non-filled shapes, make the border thicker.
+    //       ctx.stroke();
+    //     }
+    //     ctx.globalAlpha = 1;
+    //   });
 
       //draw Lattice trace edges
       traceEdges.forEach((edge) => {
@@ -96,14 +96,37 @@ const LatticeBackgroundRenderer: React.FC = () => {
         ctx.stroke();
         ctx.globalAlpha = 1;
 
-        console.log('🎯 traceEdges visible now:', traceEdges);
+        // console.log('🎯 traceEdges visible now:', traceEdges);
 
       });
 
-      ctx.beginPath();
-      ctx.arc(canvas.width / 2, canvas.height / 2, 10, 0, 2 * Math.PI);
-      ctx.fillStyle = 'red';
-      ctx.fill();
+
+      // 🔴 Red dot at (0, 0)
+{
+    const [x, y] = hexToPixel(-2, 3, HEX_SIZE, centerX, centerY);
+    ctx.beginPath();
+    ctx.arc(x, y, 6, 0, 2 * Math.PI);
+    ctx.fillStyle = 'red';
+    ctx.fill();
+  }
+  
+  // 🔵 Blue dot at (1, 0)
+  {
+    const [x, y] = hexToPixel(-1, 2, HEX_SIZE, centerX, centerY);
+    ctx.beginPath();
+    ctx.arc(x, y, 6, 0, 2 * Math.PI);
+    ctx.fillStyle = 'blue';
+    ctx.fill();
+  }
+  
+  // 🟢 Green dot at (0, -2)
+  {
+    const [x, y] = hexToPixel(-1, 4, HEX_SIZE, centerX, centerY);
+    ctx.beginPath();
+    ctx.arc(x, y, 6, 0, 2 * Math.PI);
+    ctx.fillStyle = 'green';
+    ctx.fill();
+  }
 
       animationFrameId = requestAnimationFrame(render);
     };
@@ -114,7 +137,7 @@ const LatticeBackgroundRenderer: React.FC = () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', render);
     };
-  }, [shapes]);
+  }, [traceEdges]);
 
   return (
     <canvas

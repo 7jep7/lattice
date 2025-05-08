@@ -2,10 +2,11 @@ import type { MetaFunction } from "@remix-run/node";
 import HeroSection from "~/components/HeroSection";
 import ReadmeSection from "~/components/ReadmeSection";
 import LatticeBackgroundRenderer from "~/components/BackgroundLattice/LatticeBackgroundRenderer";
-import { LatticeShape } from "~/components/BackgroundLattice/LatticeShape";
 import { useEffect } from 'react';
 import { registerTraceEdge } from '~/components/BackgroundLattice/useTraceEdgeRegistry';
 import { VertexTracePath } from "~/components/BackgroundLattice/VertexTracePath";
+import { latticePaths } from '~/components/BackgroundLattice/tracePaths';
+
 
 const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
@@ -35,30 +36,9 @@ export default function Index() {
 
   //for testing
   useEffect(() => {
-
-
-    const tracePath = new VertexTracePath({
-      id: 'trace-test',
-      start_vertex: { hex: { x: -4, y: 0 }, vertex: 0 },
-      directions: [2, 3, 4, 5], // a short zig-zag
-      mode: 'trace',
-      startAnimationIn: window.innerHeight * 0.5,
-      startAnimationOut: window.innerHeight * 1.2,
-      color: 'rgba(255, 106, 0, 1)',
+    latticePaths.forEach((path) => {
+      path.generateTraceEdges().forEach(registerTraceEdge);
     });
-
-    const flashPath = new VertexTracePath({
-      id: 'trace-test',
-      start_vertex: { hex: { x: -2, y: 0 }, vertex: 0 },
-      directions: [2, 3, 4, 5], // a short zig-zag
-      mode: 'flash',
-      startAnimationIn: window.innerHeight * 0.5,
-      startAnimationOut: window.innerHeight * 1.2,
-      color: 'rgba(255, 106, 0, 1)',
-    });
-
-    tracePath.generateTraceEdges().forEach(registerTraceEdge);
-    flashPath.generateTraceEdges().forEach(registerTraceEdge);
 
   }, []);
 

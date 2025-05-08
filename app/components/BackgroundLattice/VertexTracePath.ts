@@ -36,7 +36,7 @@ const VERTEX_DIRECTION_TO_EDGE: Record<
   Partial<Record<0 | 1 | 2 | 3 | 4 | 5, { dx: number; dy: number; startVertex: number; endVertex: number }>>
 > = {
   0: {
-    0: { dx: 1, dy: -1, startVertex: 4, endVertex: 5 },
+    0: { dx: 1, dy: 0, startVertex: 4, endVertex: 5 },
     2: { dx: 0, dy: 0, startVertex: 0, endVertex: 1 },
     4: { dx: 0, dy: 0, startVertex: 0, endVertex: 5 },
   },
@@ -58,7 +58,7 @@ const VERTEX_DIRECTION_TO_EDGE: Record<
   4: {
     0: { dx: 0, dy: 0, startVertex: 4, endVertex: 5 },
     2: { dx: 0, dy: 0, startVertex: 4, endVertex: 3 },
-    4: { dx: -1, dy: 0, startVertex: 0, endVertex: 5 },
+    4: { dx: -1, dy: 1, startVertex: 0, endVertex: 5 },
   },
   5: {
     1: { dx: 0, dy: 0, startVertex: 5, endVertex: 0 },
