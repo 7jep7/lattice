@@ -1,7 +1,7 @@
 // app/components/HeroSection.tsx
 export default function HeroSection() {
     return (
-      <section className="relative overflow-hidden min-h-screenb bg-transparent text-textdark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
+      <section className="relative overflow-hidden min-h-screenb bg-transparent text-text dark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
         
         {/* 🔹 Add animated background */}
         {/* <LatticeBackground /> */}
@@ -13,7 +13,7 @@ export default function HeroSection() {
             <br className="hidden sm:block" />
             and the people around them.
           </h1>
-          <p className="text-lg md:text-xl text-accent dark:text-accent-dark mb-10">
+          <p className="text-lg md:text-xl text-text dark:text-text-dark mb-10">
             Lattice is a decentralized protocol for assigning tasks, sharing data,
             and resolving interactions between autonomous agents and humans —
             in the real world.

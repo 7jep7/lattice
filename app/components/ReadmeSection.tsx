@@ -96,11 +96,11 @@ export default function ReadmeSection() {
       </div> */}
       {/* Right: Story */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-start px-6 py-16 bg-transparent text-text dark:text-text-dark max-w-2xl ml-auto">
-        <p className="uppercase tracking-wide text-accent dark:text-accent-dark text-sm mb-2 font-semibold w-full text-left">
+        <p className="uppercase tracking-wide text-text dark:text-text-dark text-sm mb-2 font-semibold w-full text-left">
           README — Lattice
         </p>
         <h2 className="text-2xl md:text-3xl font-bold mb-6 w-full text-left">This is not a whitepaper.</h2>
-        <div className="text-lg text-accent dark:text-accent-dark leading-relaxed space-y-4 w-full text-left mb-10">
+        <div className="text-lg text-text dark:text-text-dark leading-relaxed space-y-4 w-full text-left mb-10">
           <p>This is not a protocol spec, not a tokenomics sheet, and definitely not an ICO.</p>
           <p>This is just a story.</p>
           <p>A story told in three acts.<br />A story about coordination, and what happens when machines start to move on their own.</p>
@@ -110,13 +110,13 @@ export default function ReadmeSection() {
         </div>
         {sections.map((section, idx) => (
           <div key={section.title} className="mb-16 last:mb-0 w-full">
-            <p className="uppercase tracking-wide text-accent dark:text-accent-dark text-sm mb-2 w-full text-left">
+            <p className="uppercase tracking-wide text-text dark:text-text-dark text-sm mb-2 w-full text-left">
               {section.title}
             </p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 max-w-2xl w-full text-left">
               {section.heading}
             </h2>
-            <div className="text-lg text-accent dark:text-accent-dark max-w-2xl leading-relaxed space-y-2 w-full text-left">
+            <div className="text-lg text-text dark:text-text-dark max-w-2xl leading-relaxed space-y-2 w-full text-left">
               {section.content}
             </div>
           </div>
