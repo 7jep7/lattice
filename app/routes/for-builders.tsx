@@ -83,8 +83,10 @@ export default function ForBuilders() {
               <img src="/builders/usecases/delivery_white.png" alt="Delivery" className="w-full h-full object-contain hidden dark:block" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Last-Mile Delivery</h3>
-              <p>Coordinate fleets of autonomous delivery robots and human couriers to optimize routes, handle deliveries in challenging environments, and provide seamless fallback options when automation encounters obstacles.</p>
+              <h3 className="text-xl font-semibold mb-3">AI-Powered Last-Mile Delivery</h3>
+              <p className="mb-1">Apple Intelligence orders food via Lattice, creating a smart contract. A local grocery&apos;s robotic fleet accepts and delivers.</p>
+              <p>Outcome: Lattice ensures trust, processes payments (Silicon Tokens/fiat), and rewards users, driving network growth.</p>
+              <p><strong>Seamless, decentralized, efficient.</strong></p>
             </div>
           </div>
 
