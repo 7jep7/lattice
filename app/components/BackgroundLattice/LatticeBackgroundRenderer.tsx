@@ -101,32 +101,39 @@ const LatticeBackgroundRenderer: React.FC = () => {
       });
 
 
-      // 🔴 Red dot at (0, 0)
-{
-    const [x, y] = hexToPixel(-2, 3, HEX_SIZE, centerX, centerY);
-    ctx.beginPath();
-    ctx.arc(x, y, 6, 0, 2 * Math.PI);
-    ctx.fillStyle = 'red';
-    ctx.fill();
-  }
+//       // 🔴 Red dot at (i, 3)
+//     {
+//         for (let i = -3; i <= 6; i++) {
+//     const [x, y] = hexToPixel(i, 3, HEX_SIZE, centerX, centerY);
+//     ctx.beginPath();
+//     ctx.arc(x, y, 6, 0, 2 * Math.PI);
+//     ctx.fillStyle = 'red';
+//     ctx.fill();
+//         }
+//   }
   
-  // 🔵 Blue dot at (1, 0)
-  {
-    const [x, y] = hexToPixel(-1, 2, HEX_SIZE, centerX, centerY);
-    ctx.beginPath();
-    ctx.arc(x, y, 6, 0, 2 * Math.PI);
-    ctx.fillStyle = 'blue';
-    ctx.fill();
-  }
+//   // 🔵 Blue dot at (i, 2)
+//   {
+//     for (let i = -10; i <= 6; i++) {
+//         const [x, y] = hexToPixel(i, 2, HEX_SIZE, centerX, centerY);
+//         ctx.beginPath();
+//         ctx.arc(x, y, 6, 0, 2 * Math.PI);
+//         ctx.fillStyle = 'blue';
+//         ctx.fill();
+//             }
+//   }
   
-  // 🟢 Green dot at (0, -2)
-  {
-    const [x, y] = hexToPixel(-1, 4, HEX_SIZE, centerX, centerY);
-    ctx.beginPath();
-    ctx.arc(x, y, 6, 0, 2 * Math.PI);
-    ctx.fillStyle = 'green';
-    ctx.fill();
-  }
+//   // 🟢 Green dot at (0, -2)
+//   {
+//     for (let i = -3; i <= 6; i++) {
+//         const [x, y] = hexToPixel(i, 1, HEX_SIZE, centerX, centerY);
+//         ctx.beginPath();
+//         ctx.arc(x, y, 6, 0, 2 * Math.PI);
+//         ctx.fillStyle = 'green';
+//         ctx.fill();
+//             }
+       
+//   }
 
       animationFrameId = requestAnimationFrame(render);
     };

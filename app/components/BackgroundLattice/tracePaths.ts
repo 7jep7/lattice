@@ -21,9 +21,9 @@ export const latticePaths: VertexTracePath[] = [
 //   }),
   new VertexTracePath({
     id: 'concentric-rings',
-    start_vertex: { hex: { x: -2, y: 3 }, vertex: 0 },
+    start_vertex: { hex: { x: -2, y: 2 }, vertex: 0 },
     directions: [2,3,4,5,0,1,   0,1,2,3,2,3,4,3,4,5,4,5,0,5,0,1, 0,1,2,1,   
-        0,1,2,3,2,3,2,3,4,3,4,3,4,3,4,5,4,5,4,5,4,5,0,5,0,5,0,5,0,1,0,1,0,1,0,1,2,1,2,1,2,1,2],
+        0,1,2,3,2,3,2,3,4,3,4,3,4,5,4,5,4,5,0,5,0,5,0,1,0,1,0,1,2,1,2,1,2],
     mode: 'trace',
     startAnimationIn: 0,
     startAnimationOut: 1800,
