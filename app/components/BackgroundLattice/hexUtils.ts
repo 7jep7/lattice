@@ -37,9 +37,11 @@ import { HexCoord } from './types';
  * @returns A tuple `[px, py]` representing the pixel coordinates of the hexagonal grid cell.
  */
 export function hexToPixel(x: number, y: number, len: number, cx: number, cy: number): [number, number] {
+    const hexWidth = len * 3/2;
     const hexHeight = Math.sqrt(3) * len; //Pythagoras
-    const px = cx + x * len * 1.5;
-    const py = cy + y * hexHeight + (x % 2) * (hexHeight / 2);
+    
+    const px = cx + x * hexWidth;
+    const py = cy + y * hexHeight + (x & 1) * (hexHeight / 2); // important: x % 2 wouldn't work as expected, because -1 % 2 = -1 (not 1 - the offset would be into the other direction for x<0..)
     return [px, py];
 }
 

@@ -36,12 +36,12 @@ const VERTEX_DIRECTION_TO_EDGE: Record<
   Partial<Record<0 | 1 | 2 | 3 | 4 | 5, { dx: number; dy: number; startVertex: number; endVertex: number }>>
 > = {
   0: {
-    0: { dx: 1, dy: 0, startVertex: 4, endVertex: 5 },
+    0: { dx: 0, dy: -1, startVertex: 2, endVertex: 1 },
     2: { dx: 0, dy: 0, startVertex: 0, endVertex: 1 },
     4: { dx: 0, dy: 0, startVertex: 0, endVertex: 5 },
   },
   1: {
-    1: { dx: 1, dy: 0, startVertex: 5, endVertex: 0 },
+    1: { dx: 1, dy: 0, startVertex: 5, endVertex: 0 }, //dy=0 for even x BUT (!): dy=1 for odd x.
     3: { dx: 0, dy: 0, startVertex: 1, endVertex: 2 },
     5: { dx: 0, dy: 0, startVertex: 1, endVertex: 0 },
   },
@@ -52,13 +52,13 @@ const VERTEX_DIRECTION_TO_EDGE: Record<
   },
   3: {
     1: { dx: 0, dy: 0, startVertex: 3, endVertex: 2 },
-    3: { dx: -1, dy: 0, startVertex: 1, endVertex: 2 },
+    3: { dx: 0, dy: 1, startVertex: 5, endVertex: 4 },
     5: { dx: 0, dy: 0, startVertex: 3, endVertex: 4 },
   },
   4: {
     0: { dx: 0, dy: 0, startVertex: 4, endVertex: 5 },
     2: { dx: 0, dy: 0, startVertex: 4, endVertex: 3 },
-    4: { dx: -1, dy: 1, startVertex: 0, endVertex: 5 },
+    4: { dx: -1, dy: 0, startVertex: 0, endVertex: 5 }, //dy=0 for even x BUT (!): dy=1 for odd x.
   },
   5: {
     1: { dx: 0, dy: 0, startVertex: 5, endVertex: 0 },
@@ -130,6 +130,8 @@ export class VertexTracePath {
 
     for (const direction of this.directions) {
       const edge = this.computeNextEdge(currentHex, currentVertex, direction);
+      console.log(`→ From hex (${currentHex.x},${currentHex.y}) vertex ${currentVertex} in dir ${direction} →`, edge);
+
       edges.push(edge);
       currentHex = edge.hex;
       currentVertex = edge.endVertex;
@@ -187,10 +189,18 @@ export class VertexTracePath {
     if (!edgeInfo) {
       throw new Error(`❌ Invalid direction ${direction} from vertex ${currentVertex}`);
     }
+
+    let dy = edgeInfo.dy;
+    // Correction due to the half-y-offset of the hexagons in the odd columns (s. VERTEX_DIRECTION_TO_EDGE variable above))
+    if (currentHex.x%2!==0 && ((currentVertex==1 && direction==1) || (currentVertex==4 && direction==4))){
+        dy += 1;
+    }
+
     return {
+
       hex: {
         x: currentHex.x + edgeInfo.dx,
-        y: currentHex.y + edgeInfo.dy,
+        y: currentHex.y + dy,
       },
       startVertex: asVertexIndex(edgeInfo.startVertex),
       endVertex: asVertexIndex(edgeInfo.endVertex),
