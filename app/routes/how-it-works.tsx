@@ -42,15 +42,18 @@ export default function HowItWorks() {
         <p>
           This will enable Lattice to operate at scale, in sub-second latency, and at ultra-low fees. Further, the Sui Stack provides all the abstractions needed to build truly seamless interactions:
         </p>
-        <ul className="list-disc list-inside space-y-2">
-          <li>
-            User-friendly abstractions and frictionless Web2-like experiences using SUI’s SEAL for robust encryption and Onchain access control for sensitive data
+        <ul className="space-y-3">
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>User-friendly abstractions and frictionless Web2-like experiences using SUI's SEAL for robust encryption and Onchain access control for sensitive data</span>
           </li>
-          <li>
-            Large-scale, resilient, and easily manageable data storage on Sui´s Walrus - cost-competitive with the latest commercial cloud services at sub-second speeds
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Large-scale, resilient, and easily manageable data storage on Sui´s Walrus - cost-competitive with the latest commercial cloud services at sub-second speeds</span>
           </li>
-          <li>
-            At the highest private and encrypted using Tusky’s abstractions
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>At the highest private and encrypted using Tusky's abstractions</span>
           </li>
         </ul>
       </section>
@@ -60,12 +63,27 @@ export default function HowItWorks() {
         <p>
           The Lattice Network aims to enable efficient, market-driven resource allocation in the robotic age through a simple, scalable design. It:
         </p>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Aligns incentives for sustainable, ubiquitous growth</li>
-          <li>Communicates a clear, straightforward structure</li>
-          <li>Strongly rewards early adopters to kickstart the network</li>
-          <li>Empowers users to collaboratively drive network development</li>
-          <li>Ensures secure, self-custodial, privacy-preserving, and censorship-resistant data handling</li>
+        <ul className="space-y-3">
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Aligns incentives for sustainable, ubiquitous growth</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Communicates a clear, straightforward structure</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Strongly rewards early adopters to kickstart the network</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Empowers users to collaboratively drive network development</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Ensures secure, self-custodial, privacy-preserving, and censorship-resistant data handling</span>
+          </li>
         </ul>
         <p>
           As an ecosystem, Lattice needs its own fuel, its own unit of exchange that users interact with implicitly or directly. The robotic age is going to be powered by <span className="font-semibold">$Silicon</span>. Silicon will be the utility and governance token of the network.
@@ -96,20 +114,54 @@ export default function HowItWorks() {
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold">Lattice System Tokenomics</h2>
-        <p>Total Supply: 1,000,000,000 Silicon Tokens (fixed, no inflation).</p>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Team: 15% (150,000,000 tokens), vested over 4 years.</li>
-          <li>Ecosystem Fund: 20% (200,000,000 tokens), dedicated to development and partnerships.</li>
-          <li>Community: 65% (650,000,000 tokens), distributed through Task and Curation Rewards.</li>
-        </ul>
-        <p>Distribution: No presale. Tokens are allocated solely through Task and Curation Rewards to foster community participation.</p>
+        
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+          <div className="md:w-3/4 space-y-4">
+            <p>Total Supply: 1,000,000,000 Silicon Tokens (fixed, no inflation).</p>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+                <span>Team: 15% (150,000,000 tokens), vested over 4 years.</span>
+              </li>
+              <li className="flex items-start">
+                <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+                <span>Ecosystem Fund: 20% (200,000,000 tokens), dedicated to development and partnerships.</span>
+              </li>
+              <li className="flex items-start">
+                <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+                <span>Community: 65% (650,000,000 tokens), distributed through Task and Curation Rewards.</span>
+              </li>
+            </ul>
+            <p>Distribution: No presale. Tokens are allocated solely through Task and Curation Rewards to foster community participation.</p>
+          </div>
+          <div className="md:w-1/4 flex flex-col items-center justify-center">
+            <img src="/how/Silicon.png" alt="Silicon Token" className="w-24 h-24 md:w-32 md:h-32 object-contain" />
+            <p className="text-sm font-medium text-center mt-2">Silicon Token $SIL</p>
+          </div>
+        </div>
+        
         <h3 className="text-xl font-semibold">Roadmap:</h3>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Q2 2025 (Now): Finalized tokenomics, audited Sui contracts, Walrus integration.</li>
-          <li>Q3 2025: MVP launch, closed beta (agriculture, mapping, human tasks).</li>
-          <li>Q4 2025: Public beta, reputation system, zkLogin rollout, marketing.</li>
-          <li>Q1 2026: Full launch, advanced reputation, stablecoin conversion.</li>
-          <li>Q2 2026: Data marketplace launch, expanded partnerships.</li>
+        <ul className="space-y-3">
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Q2 2025 (Now): Finalized tokenomics, audited Sui contracts, Walrus integration.</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Q3 2025: MVP launch, closed beta (agriculture, mapping, human tasks).</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Q4 2025: Public beta, reputation system, zkLogin rollout, marketing.</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Q1 2026: Full launch, advanced reputation, stablecoin conversion.</span>
+          </li>
+          <li className="flex items-start">
+            <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
+            <span>Q2 2026: Data marketplace launch, expanded partnerships.</span>
+          </li>
         </ul>
       </section>
     </main>
