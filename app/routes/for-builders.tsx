@@ -60,9 +60,21 @@ export default function ForBuilders() {
         </div>
       </section>
 
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold text-center">First Users & Interactions</h2>
+        <div className="my-6 p-5 border-l-4 border-primary dark:border-primary-dark bg-primary/5 dark:bg-primary-dark/10 rounded-r-lg text-left max-w-3xl mx-auto">
+          <p className="text-lg">
+            The Lattice Network facilitates seamless trading of data and services, with every interaction guided by curated task templates, also known as smart contracts. These programmable frameworks ensure smooth, reliable exchanges between humans, personal AIs, and autonomous robots.
+          </p>
+          <p className="text-lg mt-3">
+            While the full scope of Lattice’s applications is boundless, here are the two dimensions: <span className="font-semibold">Data</span> and <span className="font-semibold">Services</span>.
+          </p>
+        </div>
+      </section>
+
       {/* Use case images section */}
       <section className="py-8">
-        <h2 className="text-2xl font-semibold mb-8 text-center">Use Cases</h2>
+        <h2 className="text-2xl font-semibold mb-8 text-center">Early Use Cases, endless ways to go..</h2>
         <div className="flex flex-col gap-16">
           {/* Delivery Use Case */}
           <div className="flex flex-col md:flex-row items-center gap-8">
@@ -103,7 +115,10 @@ export default function ForBuilders() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Fleet Operators / Hardware Providers</h2>
+        <div className="flex items-center gap-3 mb-5">
+          <h2 className="text-2xl font-semibold">Fleet Operators / Hardware Providers</h2>
+          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
+        </div>
         <ul className="list-disc list-inside space-y-2">
           <li>Get more tasks and fallback support</li>
           <li>Stay in control of pricing, operations, and data</li>
@@ -111,7 +126,10 @@ export default function ForBuilders() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Developers</h2>
+        <div className="flex items-center gap-3 mb-5">
+          <h2 className="text-2xl font-semibold">Developers</h2>
+          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
+        </div>
         <ul className="list-disc list-inside space-y-2">
           <li>Build human-facing apps on top of real-world agents</li>
           <li>Trigger robotic actions programmatically</li>
@@ -120,7 +138,10 @@ export default function ForBuilders() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Researchers</h2>
+        <div className="flex items-center gap-3 mb-5">
+          <h2 className="text-2xl font-semibold">Researchers</h2>
+          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
+        </div>
         <ul className="list-disc list-inside space-y-2">
           <li>Access data from interventions and task outcomes</li>
           <li>Train better RL and embodied models using real human-agent feedback</li>
@@ -128,7 +149,10 @@ export default function ForBuilders() {
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Cities / Coordinators</h2>
+        <div className="flex items-center gap-3 mb-5">
+          <h2 className="text-2xl font-semibold">Cities / Coordinators</h2>
+          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
+        </div>
         <ul className="list-disc list-inside space-y-2">
           <li>Run mixed-fleet environments</li>
           <li>Let people and machines coordinate via a neutral layer</li>
