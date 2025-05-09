@@ -85,8 +85,8 @@ export default function ForBuilders() {
             <div>
               <h3 className="text-xl font-semibold mb-3">AI-Powered Last-Mile Delivery</h3>
               <p className="mb-1">Apple Intelligence orders food via Lattice, creating a smart contract. A local grocery&apos;s robotic fleet accepts and delivers.</p>
-              <p>Outcome: Lattice ensures trust, processes payments (Silicon Tokens/fiat), and rewards users, driving network growth.</p>
-              <p><strong>Seamless, decentralized, efficient.</strong></p>
+              <p>Lattice ensures trust, processes payments (Silicon Tokens/fiat), and rewards users, driving network growth.</p>
+              <p><strong>Outcome: Seamless, decentralized, efficient fleet collaboration.</strong></p>
             </div>
           </div>
 
@@ -97,8 +97,10 @@ export default function ForBuilders() {
               <img src="/builders/usecases/bridge_white.png" alt="Infrastructure" className="w-full h-full object-contain hidden dark:block" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Infrastructure Monitoring</h3>
-              <p>Deploy drones and robotic systems to regularly inspect critical infrastructure like bridges and buildings, with human experts providing oversight and specialized assessment when anomalies are detected.</p>
+              <h3 className="text-xl font-semibold mb-3">Data Collection: 3D of Infrastructure Survey</h3>
+              <p className="mb-1">Monitoring bridges is expensive, but hobbyist drones can deliver high-resolution data cheaper. Lattice System connects insurers or governments with drone operators.</p>
+              <p>Data Buyers set Data Bounties via Smart Contracts, defining access and checks. Drones, autonomous or human-guided, accept Tasks, deliver data, and receive secure, on-chain payments in Silicon Tokens.</p>
+              <p><strong>Outcome: Lattice ensures trust, security, and seamless human-robot collaboration.</strong></p>
             </div>
           </div>
 
@@ -109,8 +111,9 @@ export default function ForBuilders() {
               <img src="/builders/usecases/supervised_white.png" alt="Supervised Operations" className="w-full h-full object-contain hidden dark:block" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Supervised Operations</h3>
-              <p>Enable efficient human supervision of autonomous systems with intuitive interfaces for monitoring multiple agents, addressing edge cases, and providing expert guidance when AI encounters situations beyond its capabilities.</p>
+              <h3 className="text-xl font-semibold mb-3">Human Supervision of Robotic Operations</h3>
+              <p className="mb-1">Lattice enables efficient human supervision of autonomous systems. It provides intuitive interfaces for monitoring multiple agents, addressing edge cases, and offering expert guidance when AI faces situations beyond its capabilities.</p>
+              <p><strong>Outcome: Enhanced operational efficiency and safety through seamless human-AI collaboration. Result: Reliable and adaptable autonomous systems.</strong></p>
             </div>
           </div>
         </div>
