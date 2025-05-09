@@ -111,57 +111,12 @@ export default function ForBuilders() {
               <img src="/builders/usecases/supervised_white.png" alt="Supervised Operations" className="w-full h-full object-contain hidden dark:block" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Human Supervision of Robotic Operations</h3>
-              <p className="mb-1">Lattice enables efficient human supervision of autonomous systems. It provides intuitive interfaces for monitoring multiple agents, addressing edge cases, and offering expert guidance when AI faces situations beyond its capabilities.</p>
-              <p><strong>Outcome: Enhanced operational efficiency and safety through seamless human-AI collaboration. Result: Reliable and adaptable autonomous systems.</strong></p>
+              <h3 className="text-xl font-semibold mb-3">Human-Robot Collaboration: Human helps with Guidance and Supervision</h3>
+              <p className="mb-1">A ground-based robot, surveying urban infrastructure via the Lattice Network, gets stuck in a muddy alley. Its AI hires a nearby human through a smart contract, offering payment to free it. Using fine-grained motor control and contextual judgment, the human clears debris and guides the robot to stable ground, ensuring compliance with local pedestrian rules. Payment is processed instantly, and the robot updates its path to avoid obstacles.</p>
+              <p><strong>Outcome: This highlights Lattice’s ability to integrate human dexterity, judgment, or legally required compliance with robotic efficiency.</strong></p>
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="space-y-6">
-        <div className="flex items-center gap-3 mb-5">
-          <h2 className="text-2xl font-semibold">Fleet Operators / Hardware Providers</h2>
-          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
-        </div>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Get more tasks and fallback support</li>
-          <li>Stay in control of pricing, operations, and data</li>
-        </ul>
-      </section>
-
-      <section className="space-y-6">
-        <div className="flex items-center gap-3 mb-5">
-          <h2 className="text-2xl font-semibold">Developers</h2>
-          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
-        </div>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Build human-facing apps on top of real-world agents</li>
-          <li>Trigger robotic actions programmatically</li>
-          <li>Monitor tasks and intervene intelligently</li>
-        </ul>
-      </section>
-
-      <section className="space-y-6">
-        <div className="flex items-center gap-3 mb-5">
-          <h2 className="text-2xl font-semibold">Researchers</h2>
-          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
-        </div>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Access data from interventions and task outcomes</li>
-          <li>Train better RL and embodied models using real human-agent feedback</li>
-        </ul>
-      </section>
-
-      <section className="space-y-6">
-        <div className="flex items-center gap-3 mb-5">
-          <h2 className="text-2xl font-semibold">Cities / Coordinators</h2>
-          <div className="h-px bg-gradient-to-r from-primary/50 to-transparent dark:from-primary-dark/50 flex-grow"></div>
-        </div>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Run mixed-fleet environments</li>
-          <li>Let people and machines coordinate via a neutral layer</li>
-        </ul>
       </section>
     </main>
   );
