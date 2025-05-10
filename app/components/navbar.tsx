@@ -6,6 +6,7 @@ type NavItem = { to: string; label: string };
 
 const navItems: NavItem[] = [
   { to: "/", label: "Home" },
+  { to: "/readme", label: "Readme" }, // Readme route added
   { to: "/vision", label: "Vision" },
   { to: "/how-it-works", label: "How It Works" },
   { to: "/for-builders", label: "For Builders" },
