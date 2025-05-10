@@ -14,10 +14,10 @@ export const meta: MetaFunction = () => {
 const TeamPage: React.FC = () => {
   return (
     <main className="bg-inherit dark:bg-[#0b0d10] text-gray-900 dark:text-white px-6 py-12 max-w-3xl mx-auto space-y-12">
-      <section className="text-center space-y-4">
-        <h1 className="text-3xl font-bold">Meet the Team</h1>
-        <p>
-          We’re inviting early partners, builders, researchers, and aligned funders to help shape the future of Lattice.
+      <section className="mb-16 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6">Meet the Team</h1>
+        <p className="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">
+          A prooven duo – eager to move atom with code.
         </p>
       </section>
 

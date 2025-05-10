@@ -12,9 +12,9 @@ export const meta: MetaFunction = () => [
 export default function ForBuilders() {
   return (
     <main className="bg-background text-text dark:bg-background-dark dark:text-text-dark px-6 py-12 max-w-4xl mx-auto space-y-16">
-      <section className="space-y-4">
-        <h1 className="text-3xl font-bold">For Builders</h1>
-        <p>
+      <section className="space-y-4 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold">For Builders</h1>
+        <p className="text-xl md:text-2xl mb-6 max-w-2xl mx-auto">
           Lattice is a coordination layer designed for people building real-world systems — from robotics fleets to research tools to civic infrastructure.
         </p>
       </section>
