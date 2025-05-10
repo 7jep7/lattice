@@ -154,12 +154,6 @@ const TeamPage: React.FC = () => {
         >
           Message Us on LinkedIn
         </a>
-        <a
-          href="/contact"
-          className="btn"
-        >
-          Get Early Access
-        </a>
       </section>
     </main>
   );
