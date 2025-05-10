@@ -3,20 +3,19 @@ import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Contact | Lattice" },
+    { title: "Team | Lattice" },
     {
       name: "description",
-      content:
-        "Reach out to the Lattice team to partner, collaborate, or get early access to the protocol.",
+      content: "Meet the Lattice team.",
     },
   ];
 };
 
-const ContactPage: React.FC = () => {
+const TeamPage: React.FC = () => {
   return (
     <main className="bg-inherit dark:bg-[#0b0d10] text-gray-900 dark:text-white px-6 py-12 max-w-3xl mx-auto space-y-12">
       <section className="text-center space-y-4">
-        <h1 className="text-3xl font-bold">Get in Touch</h1>
+        <h1 className="text-3xl font-bold">Meet the Team</h1>
         <p>
           We’re inviting early partners, builders, researchers, and aligned funders to help shape the future of Lattice.
         </p>
@@ -24,7 +23,7 @@ const ContactPage: React.FC = () => {
 
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-8 text-center">
         <div className="space-y-2">
-          <img className="mx-auto" src="/contact/jonas-profile_pic.jpeg" alt="Jonas Petersen" style={{ width: 160, height: 160, objectFit: 'cover', borderRadius: '50%', boxShadow: '0 2px 16px #0002' }} />
+          <img className="mx-auto" src="/team/jonas-profile_pic.jpeg" alt="Jonas Petersen" style={{ width: 160, height: 160, objectFit: 'cover', borderRadius: '50%', boxShadow: '0 2px 16px #0002' }} />
           <h2 className="text-xl font-semibold">Jonas Petersen</h2>
           <div className="flex justify-center gap-4">
             <a
@@ -47,7 +46,7 @@ const ContactPage: React.FC = () => {
         </div>
 
         <div className="space-y-2">
-          <img className="mx-auto" src="/contact/gordon_profile_pic.webp" alt="Gordon Koehn" style={{ width: 160, height: 160, objectFit: 'cover', borderRadius: '50%', boxShadow: '0 2px 16px #0002' }} />
+          <img className="mx-auto" src="/team/gordon_profile_pic.webp" alt="Gordon Koehn" style={{ width: 160, height: 160, objectFit: 'cover', borderRadius: '50%', boxShadow: '0 2px 16px #0002' }} />
           <h2 className="text-xl font-semibold">Gordon Koehn</h2>
           <div className="flex justify-center gap-4">
             <a
@@ -92,4 +91,4 @@ const ContactPage: React.FC = () => {
   );
 };
 
-export default ContactPage;
+export default TeamPage;
