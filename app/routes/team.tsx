@@ -57,7 +57,7 @@ const TeamPage: React.FC = () => {
               Jonas Petersen is a founder and operator at the nexus of AI, media infrastructure, and robotics. As UK CEO of Media Press Group, he established the London office and co-led a 12-person commercial team, launching a metadata platform used by Europe’s largest broadcasters. He co-founded K2 AI, a machine learning hub that achieved €500k ARR in its first year. With dual MSc degrees in Mechanical Engineering (Imperial College) and Nanotechnology (Cambridge), Jonas brings technical depth and operational expertise. He recently won second prize for Scalability at Germany’s largest robotics hackathon in Munich.
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-              <strong>Publications:</strong> Modelling and Optimisation of Extinction Actions for Wildfire Suppression (Combustion Science & Technology, Sep 2023)
+              <strong>Publications:</strong> <a href="https://www.tandfonline.com/doi/full/10.1080/00102202.2023.2246195" target="_blank" rel="noopener noreferrer" className="hover:underline">Modelling and Optimisation of Extinction Actions for Wildfire Suppression</a> (Combustion Science & Technology, Sep 2023)
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
               <strong>Experience:</strong> Ex-BCG, RL & Robotics Hacker, BMW Hackathon 2nd Place
@@ -96,7 +96,7 @@ const TeamPage: React.FC = () => {
               Gordon is a software engineer and Web3 innovator with dual MSc degrees in Biotech (ETH Zürich) and Physics (Imperial College). At ETH Zürich’s D-BSSE, he builds data importers for genomic databases to accelerate viral variant discovery in Swiss wastewater. By night, he’s a top 50 global Hummingbot market maker, securing €60k in soft commitments for a 2024 Sui project focused on efficient liquidity pools with on-chain order books. His interdisciplinary expertise in physics, biotech, and decentralized finance fuels Lattice’s data-driven approach.
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
-              <strong>Publications:</strong> Killing It in Space Weather (Astrophysical Journal, MSc Thesis Feature)
+              <strong>Publications:</strong> <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aca28c" target="_blank" rel="noopener noreferrer" className="hover:underline">Successive Interacting Coronal Mass Ejections: How to Create a Perfect Storm?</a> (Astrophysical Journal, MSc Thesis Feature)
             </p>
             <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
               <strong>Experience:</strong> Software Engineer at Swiss Viral Surveillance, Web3 Market Maker
