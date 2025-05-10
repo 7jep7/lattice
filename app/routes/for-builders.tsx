@@ -60,9 +60,21 @@ export default function ForBuilders() {
         </div>
       </section>
 
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold text-center">First Users & Interactions</h2>
+        <div className="my-6 p-5 border-l-4 border-primary dark:border-primary-dark bg-primary/5 dark:bg-primary-dark/10 rounded-r-lg text-left max-w-3xl mx-auto">
+          <p className="text-lg">
+            The Lattice Network facilitates seamless trading of data and services, with every interaction guided by curated task templates, also known as smart contracts. These programmable frameworks ensure smooth, reliable exchanges between humans, personal AIs, and autonomous robots.
+          </p>
+          <p className="text-lg mt-3">
+            While the full scope of Lattice’s applications is boundless, here are the two dimensions: <span className="font-semibold">Data</span> and <span className="font-semibold">Services</span>.
+          </p>
+        </div>
+      </section>
+
       {/* Use case images section */}
       <section className="py-8">
-        <h2 className="text-2xl font-semibold mb-8 text-center">Use Cases</h2>
+        <h2 className="text-2xl font-semibold mb-8 text-center">Early Use Cases, endless ways to go..</h2>
         <div className="flex flex-col gap-16">
           {/* Delivery Use Case */}
           <div className="flex flex-col md:flex-row items-center gap-8">
@@ -71,8 +83,10 @@ export default function ForBuilders() {
               <img src="/builders/usecases/delivery_white.png" alt="Delivery" className="w-full h-full object-contain hidden dark:block" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Last-Mile Delivery</h3>
-              <p>Coordinate fleets of autonomous delivery robots and human couriers to optimize routes, handle deliveries in challenging environments, and provide seamless fallback options when automation encounters obstacles.</p>
+              <h3 className="text-xl font-semibold mb-3">AI-Powered Last-Mile Delivery</h3>
+              <p className="mb-1">Apple Intelligence orders food via Lattice, creating a smart contract. A local grocery&apos;s robotic fleet accepts and delivers.</p>
+              <p>Lattice ensures trust, processes payments (Silicon Tokens/fiat), and rewards users, driving network growth.</p>
+              <p><strong>Outcome: Seamless, decentralized, efficient fleet collaboration.</strong></p>
             </div>
           </div>
 
@@ -83,8 +97,10 @@ export default function ForBuilders() {
               <img src="/builders/usecases/bridge_white.png" alt="Infrastructure" className="w-full h-full object-contain hidden dark:block" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Infrastructure Monitoring</h3>
-              <p>Deploy drones and robotic systems to regularly inspect critical infrastructure like bridges and buildings, with human experts providing oversight and specialized assessment when anomalies are detected.</p>
+              <h3 className="text-xl font-semibold mb-3">Data Collection: 3D of Infrastructure Survey</h3>
+              <p className="mb-1">Monitoring bridges is expensive, but hobbyist drones can deliver high-resolution data cheaper. Lattice System connects insurers or governments with drone operators.</p>
+              <p>Data Buyers set Data Bounties via Smart Contracts, defining access and checks. Drones, autonomous or human-guided, accept Tasks, deliver data, and receive secure, on-chain payments in Silicon Tokens.</p>
+              <p><strong>Outcome: Lattice ensures trust, security, and seamless human-robot collaboration.</strong></p>
             </div>
           </div>
 
@@ -95,44 +111,12 @@ export default function ForBuilders() {
               <img src="/builders/usecases/supervised_white.png" alt="Supervised Operations" className="w-full h-full object-contain hidden dark:block" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-3">Supervised Operations</h3>
-              <p>Enable efficient human supervision of autonomous systems with intuitive interfaces for monitoring multiple agents, addressing edge cases, and providing expert guidance when AI encounters situations beyond its capabilities.</p>
+              <h3 className="text-xl font-semibold mb-3">Human-Robot Collaboration: Human helps with Guidance and Supervision</h3>
+              <p className="mb-1">A ground-based robot, surveying urban infrastructure via the Lattice Network, gets stuck in a muddy alley. Its AI hires a nearby human through a smart contract, offering payment to free it. Using fine-grained motor control and contextual judgment, the human clears debris and guides the robot to stable ground, ensuring compliance with local pedestrian rules. Payment is processed instantly, and the robot updates its path to avoid obstacles.</p>
+              <p><strong>Outcome: This highlights Lattice’s ability to integrate human dexterity, judgment, or legally required compliance with robotic efficiency.</strong></p>
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Fleet Operators / Hardware Providers</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Get more tasks and fallback support</li>
-          <li>Stay in control of pricing, operations, and data</li>
-        </ul>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Developers</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Build human-facing apps on top of real-world agents</li>
-          <li>Trigger robotic actions programmatically</li>
-          <li>Monitor tasks and intervene intelligently</li>
-        </ul>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Researchers</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Access data from interventions and task outcomes</li>
-          <li>Train better RL and embodied models using real human-agent feedback</li>
-        </ul>
-      </section>
-
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold">Cities / Coordinators</h2>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Run mixed-fleet environments</li>
-          <li>Let people and machines coordinate via a neutral layer</li>
-        </ul>
       </section>
     </main>
   );
