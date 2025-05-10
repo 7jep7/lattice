@@ -1,7 +1,6 @@
+import React, { useState } from "react";
 import { Link } from "@remix-run/react";
 import DarkModeToggle from "./dark-mode-toggle";
-import { useState } from "react";
-import React from "react";
 
 type NavItem = { to: string; label: string };
 
@@ -10,7 +9,7 @@ const navItems: NavItem[] = [
   { to: "/vision", label: "Vision" },
   { to: "/how-it-works", label: "How It Works" },
   { to: "/for-builders", label: "For Builders" },
-  { to: "/contact", label: "Contact" },
+  { to: "/team", label: "Team" },
 ];
 
 type MobileMenuProps = { navItems: NavItem[]; setMenuOpen: (open: boolean) => void; menuOpen: boolean };
@@ -45,6 +44,7 @@ const MobileMenu = React.memo(({ navItems, setMenuOpen, menuOpen }: MobileMenuPr
     </div>
   </div>
 ));
+MobileMenu.displayName = "MobileMenu";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
