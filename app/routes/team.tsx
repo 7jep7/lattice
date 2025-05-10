@@ -55,7 +55,8 @@ const TeamPage: React.FC = () => {
         <p className="text-lg font-medium text-primary dark:text-primary-dark mb-1">Robotics | Ecosystem</p>
         <p className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-3">MechEng & Nanotech, 2x MSc<br/>Imperial College | Cambridge</p>
         <p className="text-base leading-relaxed mb-3">
-          Jonas is a series–founder at the intersection of AI and robotics. As UK CEO of Media Press Group, he launched the London office and a metadata platform for Europe’s top broadcasters. He co-founded K2 AI, hitting €500k ARR in year one. A former BCG consultant and robotics hacker, he earned second place for Scalability at Munich’s largest robotics hackathon. His expertise drives Lattice’s ecosystem and robotics integration. 
+          Jonas is a serial–founder at the intersection of AI and robotics. As UK CEO of Media Press Group, he launched the London office and a metadata platform for Europe’s top broadcasters. He co-founded K2 AI, hitting €500k Revenue in year one. 
+          A former BCG consultant and robotics hacker, he earned the 2nd place at Germany´s largest robotics hackathon. His expertise drives Lattice’s ecosystem and robotics integration. 
         </p>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
           <strong>Publications:</strong> <a href="https://www.tandfonline.com/doi/full/10.1080/00102202.2023.2246195" target="_blank" rel="noopener noreferrer" className="hover:underline">Modelling and Optimisation of Extinction Actions for Wildfire Suppression</a> (Combustion Science & Technology, Sep 2023)
@@ -92,7 +93,10 @@ const TeamPage: React.FC = () => {
         <p className="text-lg font-medium text-primary dark:text-primary-dark mb-1">Web3 | Data</p>
         <p className="text-base font-semibold text-gray-700 dark:text-gray-300 mb-3">Physics & Biotech, 2x MSc<br/>Imperial College | ETH Zürich</p>
         <p className="text-base leading-relaxed mb-3">
-          Gordon is a software engineer and Web3 disciple. At ETH Zürich’s D-BSSE, he develops rapid genomic database queries to track viral variants in Swiss wastewater. A top 50 global Hummingbot market maker, he secured €60k in soft commitments for a 2024 Sui project on efficient liquidity pools. His expertise in physics, biotech, and DeFi drives Lattice’s data layer.
+          Gordon is a software engineer and Web3 disciple. 
+          At ETH Zürich’s D-BSSE, he develops rapid genomic database queries to track viral variants in Swiss wastewater. 
+          A top 50 global Hummingbot market maker, he secured $60k in soft commitments for a 2024 Sui project on efficient liquidity pools. 
+          His expertise in physics, biotech, and DeFi drives Lattice’s data layer.
         </p>
         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
           <strong>Publications:</strong> <a href="https://iopscience.iop.org/article/10.3847/1538-4357/aca28c" target="_blank" rel="noopener noreferrer" className="hover:underline">Successive Interacting Coronal Mass Ejections: How to Create a Perfect Storm?</a> (Astrophysical Journal, MSc Thesis Feature)
@@ -130,7 +134,9 @@ const TeamPage: React.FC = () => {
         <h3 className="text-xl font-semibold mb-2">Caelum: Crowdfunded High-Altitude Balloon Photography</h3>
         <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Co-Founders | 2017</p>
         <p className="text-base leading-relaxed">
-          Jonas and Gordon developed and launched a weather balloon to capture stratospheric photos at 38km above sea level. They co-led design, mission planning, and regulatory affairs, raising €2.5k via Kickstarter—exceeding funding goals. A second Kickstarter campaign achieved 275% of its target.
+          Jonas and Gordon developed and launched a weather balloon to capture stratospheric photos at 38km above sea level. 
+          They co-led design, mission planning, and regulatory affairs, raising  <a href="https://www.kickstarter.com/projects/gordonkoehn/caelum-photos-from-stratosphere" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-primary-dark hover:underline">€2.5k via Kickstarter</a>—exceeding funding goals. 
+          A second Kickstarter campaign achieved 275% of its target.
         </p>
       </Highlight>
 
@@ -143,7 +149,6 @@ const TeamPage: React.FC = () => {
       </Highlight>
     </div>
   </section>
-
 
       <section className="my-12 flex flex-col sm:flex-row gap-4 justify-center">
         <a
