@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 import { registerTraceEdge } from '~/components/BackgroundLattice/useTraceEdgeRegistry';
 import { VertexTracePath } from "~/components/BackgroundLattice/VertexTracePath";
 import { latticePaths } from '~/components/BackgroundLattice/tracePaths';
-
+import FadingSections from "~/components/FadingSections";
 
 const screenHeight = typeof window !== "undefined" ? window.innerHeight : 1000;
 
@@ -63,7 +63,9 @@ export default function Index() {
         ))} */}
 
         <HeroSection />
-        <ReadmeSection />
+        <FadingSections />
+
+        {/* <ReadmeSection /> */}
       </main>
     </>
   );

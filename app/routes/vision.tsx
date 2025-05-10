@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import Highlight from "~/components/Highlight";
 
 export const meta: MetaFunction = () => [
   { title: "Vision | Lattice" },
@@ -37,15 +38,6 @@ function ResponsiveImage({
   );
 }
 
-// Component for highlighting important text
-function Highlight({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`my-6 p-5 border-l-4 border-primary dark:border-primary-dark bg-primary/5 dark:bg-primary-dark/10 rounded-r-lg ${className}`}>
-      {children}
-    </div>
-  );
-}
-
 // Pull quote component for impactful statements
 function PullQuote({ children }: { children: React.ReactNode }) {
   return (
@@ -80,11 +72,7 @@ export default function Vision() {
         
         <Highlight className="text-left max-w-3xl mx-auto">
           <p>
-            Coordination today is broken — siloed, closed, hardcoded. There's no shared memory or protocol for human-agent collaboration.
-            Lattice builds that missing layer: open, neutral, and programmable.
-          </p>
-          <p className="mt-3">
-            In the future, robotic agents won't just act — they'll learn collectively through real-world interaction and human intervention.
+          Long-term, robots will coordinate like humans: collaborating, negotiating, and exchanging value — with each other and with us.
           </p>
         </Highlight>
       </section>
