@@ -21,10 +21,9 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#readme" className="btn">Read the Story</a>
             <a href="#how-it-works" className="btn">See How it Works</a>
-            <a href="#contact" className="btn">Partner with Us</a>
+            <a href="/team" className="btn">Partner with Us</a>
           </div>
         </div>
       </section>
     );
   }
-  
