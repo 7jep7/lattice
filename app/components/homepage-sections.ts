@@ -33,7 +33,7 @@ export type HomepageSection = {
       id: "use-cases",
       title: "Early examples of human-machine coordination",
       content:
-        "• Delivery: A fleet delivers groceries, paid via smart contract.\n• Survey: Hobbyist drones collect 3D infrastructure data for public agencies.\n• Supervision: A robot hires a nearby human to help it out of trouble.\n\nLattice powers interactions between robots, humans, and personal AIs — with trust, payment, and traceability built in.",
+        "• Delivery: A fleet delivers groceries, paid via smart contract.\n\n• Survey: Hobbyist drones collect 3D infrastructure data for public agencies.\n\n• Supervision: A robot hires a nearby human to help it out of trouble.\n\nLattice powers interactions between robots, humans, and personal AIs — with trust, payment, and traceability built in.",
     },
     {
       id: "join",
