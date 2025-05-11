@@ -45,7 +45,7 @@ export default function HowItWorks() {
         <ul className="space-y-3">
           <li className="flex items-start">
             <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
-            <span>User-friendly abstractions and frictionless Web2-like experiences using SUI's SEAL for robust encryption and Onchain access control for sensitive data</span>
+            <span>User-friendly abstractions and frictionless Web2-like experiences using SUI&apos;s SEAL for robust encryption and Onchain access control for sensitive data</span>
           </li>
           <li className="flex items-start">
             <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
@@ -53,7 +53,7 @@ export default function HowItWorks() {
           </li>
           <li className="flex items-start">
             <div className="text-primary dark:text-primary-dark mr-3 mt-1">•</div>
-            <span>At the highest private and encrypted using Tusky's abstractions</span>
+            <span>At the highest private and encrypted using Tusky&apos;s abstractions</span>
           </li>
         </ul>
       </section>
@@ -114,6 +114,23 @@ export default function HowItWorks() {
 
       <section className="space-y-6">
         <h2 className="text-2xl font-bold">Lattice System Tokenomics</h2>
+
+        <p>
+          Lattice economics rewards early network participation and active contribution to share the protocol. Every robotic task, service, or data exchange coordinated through the network incurs a 0.3% fee, aside from running costs. This revenue share goes to holders of the governance token, distributed to those actively building and shaping the network, early builders, and investors. Every transaction itself is paid for in our utility token, $Silicon, that users may choose to hold for lower transaction costs or interact with behind the scenes. Growing network utilization leads to higher demand and rising token value of $Silicon, with an inbuilt fixed supply and deflationary mechanisms. This rewards early users choosing to hold $Silicon, addressing the network cold start problem a new protocol faces.
+        </p>
+
+        <p>
+          We start by enabling companies to source training data for embodied AI, then expand into robotic fleet coordination and, ultimately, a global task network where humans and machines collaborate as peers. By 2050, humanoid robots could impact jobs worth approximately $3 trillion in the US alone, as suggested by <a href="https://www.morganstanley.com/ideas/humanoid-robot-market-outlook-2024" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-primary-dark hover:underline">Morgan Stanley</a>, or $24 trillion globally by 2030, predicted by <a href="https://www.ark-invest.com/articles/analyst-research/how-ark-is-thinking-about-humanoid-robotics" target="_blank" rel="noopener noreferrer" className="text-primary dark:text-primary-dark hover:underline">ARK Invest</a> in revenues, split between household and manufacturing robotics. Lattice aims to mediate the pronounced long-tail of robots that will be owned by medium and small-sized businesses and individuals, capturing 40% of this.
+        </p>
+
+        <h3 className="text-xl font-semibold mt-4 mb-2">Projected Protocol Revenue:</h3>
+        <p>
+          We estimate a protocol revenue of $1.8 - $14.4 trillion by 2030, potentially capturing $54 - $432 billion in revenue.
+        </p>
+        
+        <p>
+          Users can participate in the network’s growth by holding $Silicon, and builders by earning Governance Tokens by completing tasks the Lattice DAO sets.
+        </p>
         
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
           <div className="md:w-3/4 space-y-4">
