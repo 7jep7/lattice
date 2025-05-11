@@ -6,9 +6,7 @@ export default function HeroSection() {
     <section className="relative overflow-hidden min-h-screen bg-transparent text-text dark:text-text-dark flex flex-col justify-center items-center px-6 text-center">
       <div className="max-w-4xl mt-16">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          An open layer for coordination between intelligent machines&nbsp;
-          <br className="hidden sm:block" />
-          and the people around them.
+          The Coordination and Data Layer for the Robotic Age.
         </h1>
         {/* Microcopy tagline
         <p className="text-lg md:text-xl text-secondary dark:text-secondary-dark mb-6">
@@ -28,7 +26,7 @@ export default function HeroSection() {
       <div className="my-10"></div>
       <Highlight className="text-left max-w-3xl mx-auto">
         <p>
-          Long-term, robots will coordinate like humans: collaborating, negotiating, and exchanging value — with each other and with us.
+          Long-term, robots will coordinate like humans: collaborating, negotiating, and exchanging value - with each other and with us.
         </p>
       </Highlight>
     </section>
