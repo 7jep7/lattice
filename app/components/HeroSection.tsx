@@ -20,7 +20,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/readme" className="btn">Story Time</a>
           <a href="/how-it-works" className="btn">See How it Works</a>
-          <a href="/contact" className="btn">Join Early</a>
+          <a href="/about" className="btn">Join Early</a>
         </div>
       </div>
       <div className="my-10"></div>
