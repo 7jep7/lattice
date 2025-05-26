@@ -105,7 +105,7 @@ export default function HowItWorks() {
           Tasks are the heartbeat of the Lattice System. We craft Task Templates—Smart Contracts—that streamline interactions, creating seamless experiences for Humans, AIs, and Robots.
         </p>
         <p>
-          To accelerate growth and ensure sustainable funding in the early stages, the Lattic-DAO (Decentralized Autonomous Organization) injects Network Rewards into the flywheel. Holders of Silicon Tokens can vote on protocol development and DAO fund allocation. The Lattic-DAO receives Silicon Tokens from the Network Fund on a programmatic, decades-long schedule, ensuring long-term development.
+          To accelerate growth and ensure sustainable funding in the early stages, the Lattice-DAO (Decentralized Autonomous Organization) injects Network Rewards into the flywheel. Holders of Silicon Tokens can vote on protocol development and DAO fund allocation. The Lattice-DAO receives Silicon Tokens from the Network Fund on a programmatic, decades-long schedule, ensuring long-term development.
         </p>
         <p>
           To enhance network dynamics and introduce deflationary pressure, the system programmatically buys back Silicon Tokens with fiat or burns a portion of them. The network is designed so that increased activity drives demand for Silicon Tokens. Users can choose to interact directly with Silicon for exposure to network growth or opt for seamless conversions to fiat or stablecoins (e.g., USD or EUR) for convenience.
