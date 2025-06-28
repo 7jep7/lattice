@@ -10,6 +10,7 @@ const navItems: NavItem[] = [
   { to: "/vision", label: "Vision" },
   { to: "/how-it-works", label: "How It Works" },
   { to: "/for-builders", label: "For Builders" },
+  { to: "/data-factory", label: "Data Factory" },
   { to: "/team", label: "Team" },
 ];
 
