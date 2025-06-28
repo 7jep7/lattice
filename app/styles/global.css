@@ -1,0 +1,25 @@
+/*this was introduced so that also the browser's default background color changes when dark mode button is toggled 
+ (to avoid brief white flash when loading a new route in dark mode)*/
+
+/* app/styles/global.css */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  --background-color: #121212; /* Dark mode background */
+  --text-color: #ffffff; /* Dark mode text color */
+}
+
+body.light {
+  --background-color: #ffffff; /* Light mode background */
+  --text-color: #000000; /* Light mode text color */
+}
+
+/* global.css */
+html {
+  background-color: #121212; /* Dark mode background */
+  color: #ffffff; /* Dark mode text */
+}
