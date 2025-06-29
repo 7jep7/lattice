@@ -52,6 +52,7 @@ export default function DataFactory() {
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
+  const [isProcessingComplete, setIsProcessingComplete] = useState(false);
   const [isComplete, setIsComplete] = useState(false);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,23 +87,28 @@ export default function DataFactory() {
         setCurrentStep(index + 1);
         if (index === processingSteps.length - 1) {
           setTimeout(() => {
-            setIsProcessing(false);
-            setIsComplete(true);
+            setIsProcessingComplete(true);
           }, stepDuration);
         }
       }, index * stepDuration);
     });
   };
 
+  const handleNext = () => {
+    setIsProcessing(false);
+    setIsProcessingComplete(false);
+    setIsComplete(true);
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-transparent text-text dark:text-text-dark">
       <div className="container mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
             Robot Data Factory
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-text dark:text-text-dark max-w-3xl mx-auto">
             Teach your robot a new task simply by recording a human demo of the task.
           </p>
         </div>
@@ -112,25 +118,25 @@ export default function DataFactory() {
           <div className="max-w-2xl mx-auto space-y-8">
             {/* File Upload */}
             <div className="space-y-4">
-              <label className="block text-lg font-medium text-gray-200">
+              <label className="block text-lg font-medium text-text dark:text-text-dark">
                 Upload Demo Video
               </label>
               <div
-                className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-blue-500 transition-colors cursor-pointer"
+                className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-500 transition-colors cursor-pointer"
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
                 onClick={() => document.getElementById("file-upload")?.click()}
               >
-                <Upload className="mx-auto h-12 w-12 text-gray-400 mb-4" />
+                <Upload className="mx-auto h-12 w-12 text-text dark:text-text-dark mb-4" />
                 {uploadedFile ? (
                   <div>
                     <p className="text-green-400 font-medium">{uploadedFile.name}</p>
-                    <p className="text-sm text-gray-400">Click to change file</p>
+                    <p className="text-sm text-text dark:text-text-dark">Click to change file</p>
                   </div>
                 ) : (
                   <div>
-                    <p className="text-gray-300 mb-2">Drag and drop your video here, or click to select</p>
-                    <p className="text-sm text-gray-500">Supports MP4, MOV, AVI files</p>
+                    <p className="text-text dark:text-text-dark mb-2">Drag and drop your video here, or click to select</p>
+                    <p className="text-sm text-text dark:text-text-dark">Supports MP4, MOV, AVI files</p>
                   </div>
                 )}
                 <input
@@ -145,13 +151,13 @@ export default function DataFactory() {
 
             {/* Robot Selection */}
             <div className="space-y-4">
-              <label className="block text-lg font-medium text-gray-200">
+              <label className="block text-lg font-medium text-text dark:text-text-dark">
                 Select Robot Hardware
               </label>
               <select
                 value={selectedRobot}
                 onChange={(e) => setSelectedRobot(e.target.value)}
-                className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Choose your robot...</option>
                 {robotOptions.map((option) => (
@@ -166,7 +172,7 @@ export default function DataFactory() {
             <button
               onClick={startProcessing}
               disabled={!uploadedFile || !selectedRobot}
-              className="w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center gap-2"
+              className="w-full py-4 px-6 bg-primary text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-secondary transition-all duration-200 flex items-center justify-center gap-2"
             >
               <Play className="h-5 w-5" />
               Start Processing
@@ -177,36 +183,48 @@ export default function DataFactory() {
         {/* Processing Steps */}
         {isProcessing && (
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-8">Processing Your Demo...</h2>
+            <h2 className="text-2xl font-bold text-center mb-8 text-text dark:text-text-dark">Processing Your Demo...</h2>
             <div className="space-y-6">
               {processingSteps.map((step, index) => (
                 <div
                   key={step.id}
                   className={`flex items-center p-6 rounded-lg border transition-all duration-500 ${
                     currentStep > index
-                      ? "bg-green-900/20 border-green-500"
+                      ? "bg-primary/20 border-primary"
                       : currentStep === index + 1
-                      ? "bg-blue-900/20 border-blue-500"
-                      : "bg-gray-800 border-gray-600"
+                      ? "bg-primary/30 border-primary"
+                      : "bg-primary/10 border-primary/50"
                   }`}
                 >
                   <div className="text-3xl mr-4">{step.icon}</div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold">{step.title}</h3>
-                    <p className="text-gray-400">{step.description}</p>
+                    <h3 className="text-lg font-semibold text-text dark:text-text-dark">{step.title}</h3>
+                    <p className="text-text dark:text-text-dark opacity-75">{step.description}</p>
                   </div>
                   <div className="ml-4">
                     {currentStep > index ? (
-                      <CheckCircle className="h-6 w-6 text-green-500" />
+                      <CheckCircle className="h-6 w-6 text-white" />
                     ) : currentStep === index + 1 ? (
                       <Clock className="h-6 w-6 text-blue-500 animate-spin" />
                     ) : (
-                      <div className="h-6 w-6 rounded-full border-2 border-gray-600"></div>
+                      <div className="h-6 w-6 rounded-full border-2 border-gray-400"></div>
                     )}
                   </div>
                 </div>
               ))}
             </div>
+            
+            {/* Next Button - appears when processing is complete */}
+            {isProcessingComplete && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={handleNext}
+                  className="px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-secondary transition-all duration-200"
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </div>
         )}
 
@@ -215,13 +233,13 @@ export default function DataFactory() {
           <div className="max-w-2xl mx-auto text-center space-y-8">
             <div className="space-y-4">
               <CheckCircle className="mx-auto h-16 w-16 text-green-500" />
-              <h2 className="text-3xl font-bold text-green-400">Processing Complete!</h2>
-              <p className="text-gray-300">
+              <h2 className="text-3xl font-bold text-green-600">Processing Complete!</h2>
+              <p className="text-text dark:text-text-dark">
                 Your robot model has been successfully trained and is ready for download.
               </p>
             </div>
 
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-200">
+            <button className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-secondary transition-all duration-200">
               <Download className="h-5 w-5" />
               Download Trained Model
             </button>
@@ -231,9 +249,10 @@ export default function DataFactory() {
                 setUploadedFile(null);
                 setSelectedRobot("");
                 setIsComplete(false);
+                setIsProcessingComplete(false);
                 setCurrentStep(0);
               }}
-              className="block mx-auto text-blue-400 hover:text-blue-300 underline"
+              className="block mx-auto text-text dark:text-text-dark hover:text-accent dark:hover:text-accent-dark underline"
             >
               Process Another Demo
             </button>
